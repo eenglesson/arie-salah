@@ -19,10 +19,12 @@ const config: Config = {
       },
       colors: {
         primaryGreen: '#286247',
+        superGreen: '#123833',
         primaryBlack: '#000000',
         primaryWhite: '#FFFFFF',
         secondaryGreen: '#7CC2A2',
         secondaryYellow: '#F0FF21',
+        secondaryBeige: '#F9F5EE',
         dark70: '#666666',
         dark50: '#969696',
         grey30: '#CCCCCC',
@@ -72,11 +74,13 @@ const config: Config = {
       },
       fontSize: {
         display: ['64px', '1.2'],
+        miniDisplay: ['48px', '1.2'],
         h1: ['40px', '1.4'],
         h2: ['32px', '1.4'],
         h3: ['24px', '1.4'],
         h4: ['18px', '1.4'],
         bodyDefault: ['16px', '1.4'],
+        bodyMedium: ['14px', '1.4'],
         bodySmall: ['12px', '1.4'],
       },
       borderRadius: {

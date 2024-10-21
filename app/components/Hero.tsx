@@ -5,25 +5,25 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <header className='flex justify-between items-center w-full gap-10'>
+    <header className='flex justify-between items-center w-full gap-10 py-20 sm:py-40'>
       {/* Text section on the left */}
-      <aside className='flex flex-col w-[80%] gap-14'>
-        <div>
-          <h1 className='text-h1 font-playfair md:text-display xl:text-[96px] text-white'>
+      <aside className='flex flex-col gap-14'>
+        <div className='sm:w-[90%]'>
+          <h1 className='text-h1 font-playfair md:text-display text-white'>
             The Law Is The Public Conscience
           </h1>
           <p className='text-grey20 text-bodySmall sm:text-bodyDefault max-w-[70%]'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-            placeat quis tempora accusantium porro veniam dicta beatae facilis
-            voluptatum consectetur ipsam tempore, distinctio nesciunt?
+            With Tailored Solutions and Expert Consultation, We Navigate Complex
+            Legal Terrain Together, Ensuring Your Peace of Mind and Empowering
+            Your Journey Toward Achieving Your Goals.
           </p>
         </div>
-        <div className='flex gap-12 h-fit items-center'>
-          <Button yellow bigButton arrow>
+        <div className='flex gap-12 h-fit w-full items-center'>
+          <Button link arrow>
             Practicing Area
           </Button>
           <Link href='/contact'>
-            <p className='text-white font-normal hover:underline'>
+            <p className='text-white font-light hover:underline'>
               Book an appointment
             </p>
           </Link>

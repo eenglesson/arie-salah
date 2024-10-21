@@ -25,7 +25,9 @@ export default function BackgroundSection({
       <div className={`absolute inset-0 bg-black ${overlayOpacity}`}></div>
 
       {/* Content */}
-      <div className='relative z-10 flex flex-col min-h-screen'>{children}</div>
+      <div className='relative z-10 flex flex-col justify-between min-h-screen'>
+        {children}
+      </div>
     </section>
   );
 }

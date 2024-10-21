@@ -12,6 +12,7 @@ type ButtonProps = {
   black?: boolean;
   green?: boolean;
   yellow?: boolean;
+  link?: boolean;
 };
 
 function Button({
@@ -23,10 +24,11 @@ function Button({
   black,
   green,
   yellow,
+  link,
 }: ButtonProps) {
   const router = useRouter();
 
-  const sizeClass = bigButton ? 'py-4 px-8' : 'py-2 px-5';
+  const sizeClass = bigButton ? 'py-4 px-8' : link ? 'p-0' : 'py-2 px-5';
 
   const colorClass = black
     ? 'bg-grey05 text-primaryBlack hover:bg-primaryWhite hover:border-primaryBlack'
@@ -34,6 +36,8 @@ function Button({
     ? 'bg-white text-primaryBlack hover:bg-primaryWhite hover:border-primaryBlack'
     : yellow
     ? 'bg-secondaryYellow text-primaryBlack hover:bg-primaryWhite border-secondaryYellow hover:border-primaryWhite'
+    : link
+    ? 'bg-transparent text-primaryWhite border-none'
     : 'bg-transparent text-primaryWhite hover:bg-white hover:text-primaryBlack border-white';
 
   const handleClick = () => {
@@ -46,7 +50,7 @@ function Button({
 
   return (
     <button
-      className={`group flex text-bodyDefault font-medium items-center gap-2 w-fit h-fit rounded-[64px] border-[0.5px] duration-300
+      className={`group flex text-bodyDefault font-light items-center gap-2 w-fit h-fit rounded-[64px] border-[0.5px] duration-300
     ${sizeClass} ${colorClass}`}
       onClick={handleClick}
     >
