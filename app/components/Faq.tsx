@@ -1,5 +1,4 @@
 import React from 'react';
-import ServicesMenu from './ServicesMenu';
 import FaqMenu from './FaqMenu';
 
 export default function Faq() {

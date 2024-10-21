@@ -2,24 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    x: 40,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.4,
-      type: 'spring',
-      stiffness: 60,
-      damping: 20,
-      delay: 0.2,
-    },
-  },
-};
+import { fadeInAnimationVariantsRight } from '@/lib/framerMotion';
 
 const services = [
   {
@@ -69,7 +52,7 @@ export default function FaqMenu() {
   return (
     <>
       <motion.section
-        variants={fadeInAnimationVariants}
+        variants={fadeInAnimationVariantsRight}
         initial='initial'
         whileInView='animate'
         viewport={{ once: true }}
@@ -78,7 +61,7 @@ export default function FaqMenu() {
         <aside>
           {services.map((service) => (
             <motion.div
-              variants={fadeInAnimationVariants}
+              variants={fadeInAnimationVariantsRight}
               initial='initial'
               whileInView='animate'
               viewport={{ once: true }}
