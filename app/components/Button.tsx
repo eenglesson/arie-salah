@@ -13,6 +13,7 @@ type ButtonProps = {
   green?: boolean;
   yellow?: boolean;
   link?: boolean;
+  linkBlack?: boolean;
 };
 
 function Button({
@@ -25,10 +26,17 @@ function Button({
   green,
   yellow,
   link,
+  linkBlack,
 }: ButtonProps) {
   const router = useRouter();
 
-  const sizeClass = bigButton ? 'py-4 px-8' : link ? 'p-0' : 'py-2 px-5';
+  const sizeClass = bigButton
+    ? 'py-4 px-8'
+    : link
+    ? 'p-0'
+    : linkBlack
+    ? 'p-0'
+    : 'py-2 px-5';
 
   const colorClass = black
     ? 'bg-grey05 text-primaryBlack hover:bg-primaryWhite hover:border-primaryBlack'
@@ -38,6 +46,8 @@ function Button({
     ? 'bg-secondaryYellow text-primaryBlack hover:bg-primaryWhite border-secondaryYellow hover:border-primaryWhite'
     : link
     ? 'bg-transparent text-primaryWhite border-none'
+    : linkBlack
+    ? 'bg-transparent text-primaryBlack border-none'
     : 'bg-transparent text-primaryWhite hover:bg-white hover:text-primaryBlack border-white';
 
   const handleClick = () => {

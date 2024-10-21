@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from './Button';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -20,13 +19,8 @@ export default function Hero() {
         </div>
         <div className='flex gap-12 h-fit w-full items-center'>
           <Button link arrow>
-            Practicing Area
+            Book an appointment
           </Button>
-          <Link href='/contact'>
-            <p className='text-white font-light hover:underline'>
-              Book an appointment
-            </p>
-          </Link>
         </div>
       </aside>
     </header>

@@ -24,42 +24,42 @@ const fadeInAnimationVariants = {
 const services = [
   {
     id: 1,
-    title: 'Integrity',
+    title: 'Mergers and Acquisitions',
     about: [
-      'Upholding honesty and ethical behavior in all interactions, ensuring transparency and trustworthiness in every aspect of our practice.',
+      'At Advocare, we handle a wide range of legal matters, including corporate law, intellectual property rights, employment law, real estate law, litigation, and more.',
     ],
   },
   {
     id: 2,
-    title: 'Excellence',
+    title: 'How can I schedule a consultation with Advocare?',
     about: [
-      'Striving for the highest standards of quality and performance, continuously seeking improvement and delivering exceptional results to our clients.',
+      'Scheduling a consultation with Advocare is easy. Simply contact us through phone or email, and our team will assist you in setting up a convenient appointment with one of our attorneys.',
     ],
   },
   {
     id: 3,
-    title: 'Client-Centric Approach',
+    title: 'What sets Advocare apart from other law firms?',
     about: [
       'Placing the needs and interests of our clients at the forefront, providing personalized attention, and tailoring solutions to meet their unique circumstances.',
     ],
   },
   {
     id: 4,
-    title: 'Collaboration',
+    title: 'Does Advocare offer pro bono services?',
     about: [
       'Embracing teamwork and cooperation within our firm, leveraging diverse perspectives and expertise to provide comprehensive solutions and achieve collective success.',
     ],
   },
   {
     id: 5,
-    title: 'Community Engagement',
+    title: 'How does Advocare handle client confidentiality?',
     about: [
       'Demonstrating a commitment to social responsibility and making a positive impact in the communities we serve through pro bono work, volunteerism.',
     ],
   },
 ];
 
-export default function ServicesMenu() {
+export default function FaqMenu() {
   const [activeDiv, setActiveDiv] = useState<number | null>(null); // Type the state correctly
 
   const toggleDiv = (divId: number) => {
@@ -87,7 +87,7 @@ export default function ServicesMenu() {
               onClick={() => toggleDiv(service.id)}
             >
               <div className='flex items-center justify-between'>
-                <h3 className='text-h4 sm:text-h3 font-normal'>
+                <h3 className='text-h4 sm:text-h3 font-normal  '>
                   {service.title}
                 </h3>
                 <motion.div

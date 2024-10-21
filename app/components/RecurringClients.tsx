@@ -22,7 +22,7 @@ const proud = [
 export default function RecurringClients() {
   return (
     <>
-      <section className='w-full flex flex-col sm:flex-row flex-wrap items-stretch bg-transparent border rounded-2xl h-auto border-grey30 p-4'>
+      <section className='w-full flex flex-col sm:flex-row flex-wrap items-stretch bg-transparent border rounded-2xl h-auto border-grey30 p-6'>
         {proud.map((obj, index) => (
           <div
             key={index}

@@ -43,9 +43,9 @@ export default function WeDo() {
   return (
     <>
       <section className='p-8 sm:p-12  bg-secondaryBeige rounded-2xl h-full'>
-        <aside className='w-full flex flex-col gap-24 h-full'>
+        <aside className='w-full flex flex-col gap-12 lg:gap-24 h-full'>
           {/* Top section with title */}
-          <div className='flex flex-col xl:flex-row xl:justify-between gap-2'>
+          <div className='flex flex-col xl:flex-row xl:justify-between gap-4'>
             <h2 className='text-bodyDefault font-normal tracking-wide shrink-0'>
               What we do
             </h2>
@@ -65,8 +65,12 @@ export default function WeDo() {
                 className='flex flex-col w-full sm:w-1/2 lg:w-1/4 py-6 sm:py-8 gap-2 border-b hover:border-black transition-colors duration-300 border-grey30 flex-grow'
               >
                 <div>
-                  <h4 className='text-h3'>{service.id}</h4>
-                  <h5 className='text-h3'>{service.title}</h5>
+                  <h4 className='text-h4 sm:text-h3  font-normal'>
+                    {service.id}
+                  </h4>
+                  <h5 className='text-h4 sm:text-h3 font-normal'>
+                    {service.title}
+                  </h5>
                 </div>
                 <p className='text-bodyMedium'>{service.description}</p>
               </div>

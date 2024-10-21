@@ -4,6 +4,10 @@ import Navbar from './components/Navbar';
 import BackgroundSection from './components/BackgroundSection';
 import Services from './components/Services';
 import WeDo from './components/WeDo';
+import BlogPosts from './components/BlogPosts';
+import Faq from './components/Faq';
+import ReachOut from './components/ReachOut';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -22,9 +26,13 @@ export default function Home() {
       </BackgroundSection>
 
       {/* Additional content */}
-      <section className='max-w-[1800px] flex flex-col mx-auto px-4 gap-[128px] sm:px-16 pb-10'>
+      <section className='max-w-[1600px] flex flex-col mx-auto px-4 gap-24 sm:gap-32 sm:px-16 pb-10'>
         <Services />
         <WeDo />
+        <BlogPosts />
+        <Faq />
+        <ReachOut />
+        <Footer />
       </section>
     </>
   );

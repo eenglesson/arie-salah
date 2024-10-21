@@ -21,7 +21,7 @@ export default function NavBar() {
   const pathname = usePathname(); // usePathname for client-side routing
 
   return (
-    <nav className='flex justify-between items-center'>
+    <nav className='hidden sm:flex justify-between items-center'>
       <div className='rounded-full'>
         <div className='rounded-full overflow-hidden w-[64px] h-[64px] relative'>
           <Image
