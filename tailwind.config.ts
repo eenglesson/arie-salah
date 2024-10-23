@@ -25,6 +25,7 @@ const config: Config = {
         secondaryGreen: '#7CC2A2',
         secondaryYellow: '#F0FF21',
         secondaryBeige: '#F9F5EE',
+        gold: '#82764F',
         dark70: '#666666',
         dark50: '#969696',
         grey30: '#CCCCCC',
@@ -87,6 +88,38 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        // Animation for the first line when opening
+        line1Open: {
+          '0%': { transform: 'translateY(0) rotate(0deg)' },
+          '30%': { transform: 'translateY(4px) rotate(0deg)' }, // Translate down
+          '100%': { transform: 'translateY(4px) rotate(-45deg)' }, // Rotate
+        },
+        // Animation for the second line when opening
+        line2Open: {
+          '0%': { transform: 'translateY(0) rotate(0deg)' },
+          '30%': { transform: 'translateY(-4px) rotate(0deg)' }, // Translate up
+          '100%': { transform: 'translateY(-4px) rotate(45deg)' }, // Rotate
+        },
+        // Animation for the first line when closing
+        line1Close: {
+          '0%': { transform: 'translateY(4px) rotate(-45deg)' },
+          '40%': { transform: 'translateY(4px) rotate(0deg)' }, // Rotate back
+          '100%': { transform: 'translateY(0) rotate(0deg)' }, // Translate back
+        },
+        // Animation for the second line when closing
+        line2Close: {
+          '0%': { transform: 'translateY(-4px) rotate(45deg)' },
+          '40%': { transform: 'translateY(-4px) rotate(0deg)' }, // Rotate back
+          '100%': { transform: 'translateY(0) rotate(0deg)' }, // Translate back
+        },
+      },
+      animation: {
+        line1Open: 'line1Open 0.5s forwards',
+        line2Open: 'line2Open 0.5s forwards',
+        line1Close: 'line1Close 0.5s forwards',
+        line2Close: 'line2Close 0.5s forwards',
       },
     },
   },

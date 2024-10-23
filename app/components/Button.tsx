@@ -32,9 +32,7 @@ function Button({
 
   const sizeClass = bigButton
     ? 'py-4 px-8'
-    : link
-    ? 'p-0'
-    : linkBlack
+    : link || linkBlack
     ? 'p-0'
     : 'py-2 px-5';
 
@@ -44,11 +42,15 @@ function Button({
     ? 'bg-white text-primaryBlack hover:bg-primaryWhite hover:border-primaryBlack'
     : yellow
     ? 'bg-secondaryYellow text-primaryBlack hover:bg-primaryWhite border-secondaryYellow hover:border-primaryWhite'
-    : link
-    ? 'bg-transparent text-primaryWhite border-none'
-    : linkBlack
-    ? 'bg-transparent text-primaryBlack border-none'
+    : link || linkBlack
+    ? 'bg-transparent border-none group relative'
     : 'bg-transparent text-primaryWhite hover:bg-white hover:text-primaryBlack border-white';
+
+  const textColor = link
+    ? 'text-primaryWhite'
+    : linkBlack
+    ? 'text-primaryBlack'
+    : '';
 
   const handleClick = () => {
     if (to) {
@@ -61,10 +63,19 @@ function Button({
   return (
     <button
       className={`group flex text-bodyDefault font-light items-center gap-2 w-fit h-fit rounded-[64px] border-[0.5px] duration-300
-    ${sizeClass} ${colorClass}`}
+    ${sizeClass} ${colorClass} ${textColor}`}
       onClick={handleClick}
     >
-      {children}
+      <span className='relative'>
+        {children}
+        {(link || linkBlack) && (
+          <span
+            className={`absolute left-0 bottom-0 w-full h-[1px] ${
+              link ? 'bg-white' : 'bg-primaryBlack'
+            } transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}
+          />
+        )}
+      </span>
       {arrow && (
         <ArrowUpRight
           size={20}

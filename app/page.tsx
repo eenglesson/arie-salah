@@ -14,12 +14,12 @@ export default function Home() {
     <>
       <BackgroundSection
         backgroundImage='/assets/pillars.jpg'
-        className='min-h-screen py-4 px-4 sm:px-16'
+        className='min-h-screen sm:px-16'
       >
         <Navbar />
         <div className='relative flex-1'>
           {/* Positioning the Hero at the bottom */}
-          <div className='absolute bottom-0 w-full'>
+          <div className='absolute px-4 bottom-0 w-full'>
             <Hero />
           </div>
         </div>

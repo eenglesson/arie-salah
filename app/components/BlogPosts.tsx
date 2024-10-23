@@ -1,4 +1,8 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion'; // Corrected import statement
+import { fadeInAnimationVariantsBottom } from '@/lib/framerMotion';
 import Button from './Button';
 import Image from 'next/image';
 
@@ -33,25 +37,55 @@ export default function BlogPosts() {
       <section>
         <aside className='w-full flex flex-col gap-24'>
           <div className='flex flex-col xl:flex-row xl:justify-between gap-4'>
-            <h2 className='text-bodyDefault font-normal tracking-wide shrink-0'>
+            <motion.h2
+              variants={fadeInAnimationVariantsBottom}
+              initial='initial'
+              whileInView='animate'
+              viewport={{ once: true }}
+              className='text-bodyDefault font-normal tracking-wide shrink-0'
+            >
               The latest stories
-            </h2>
+            </motion.h2>
             <div className='flex flex-col xl:max-w-[800px] gap-2'>
-              <div className='flex flex-col gap-16'>
-                <h3 className='text-h3 font-normal xl:text-h2'>
+              <div className='flex flex-col gap-8'>
+                <motion.h3
+                  variants={fadeInAnimationVariantsBottom}
+                  initial='initial'
+                  whileInView='animate'
+                  viewport={{ once: true }}
+                  className='text-h3 font-normal xl:text-h2'
+                >
                   We offer a comprehensive array of legal services tailored to
                   meet the diverse needs of our clients.
-                </h3>
-                <Button linkBlack arrow>
-                  Read Latest Stories
-                </Button>
+                </motion.h3>
+                <motion.div
+                  variants={fadeInAnimationVariantsBottom}
+                  initial='initial'
+                  whileInView='animate'
+                  viewport={{ once: true }}
+                >
+                  {' '}
+                  <Button linkBlack arrow>
+                    Read Latest Stories
+                  </Button>
+                </motion.div>
               </div>
             </div>
           </div>
           <div className='w-full flex flex-col sm:flex-row flex-wrap items-stretch gap-16 h-full '>
-            {services.map((service) => (
-              <div
-                key={service.id}
+            {services.map((service, index) => (
+              <motion.div
+                key={index} // Keep key here
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.4,
+                  type: 'spring',
+                  stiffness: 60,
+                  damping: 20,
+                  delay: index * 0.1,
+                }}
+                viewport={{ once: true, amount: 0.2 }}
                 className='flex flex-col w-full sm:w-1/2 lg:w-1/4 gap-4 cursor-pointer  flex-grow'
               >
                 <div>
@@ -81,7 +115,7 @@ export default function BlogPosts() {
                     {service.date}
                   </span>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </aside>
