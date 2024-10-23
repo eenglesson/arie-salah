@@ -28,9 +28,9 @@ export default function Faq() {
                 viewport={{ once: true }}
                 className='max-w-[400px] text-bodyMedium sm:text-bodyDefault xl:flex hidden text-dark70'
               >
-                How does it work and where to start? We've collected answers to
-                most of the basic questions in order to be as open and
-                transparent as possible.
+                How does it work and where to start? We&apos;ve collected
+                answers to most of the basic questions in order to be as open
+                and transparent as possible.
               </motion.p>
             </div>
             <div className='flex flex-col xl:max-w-[800px] gap-16'>
@@ -52,9 +52,9 @@ export default function Faq() {
                   viewport={{ once: true }}
                   className='flex xl:hidden text-bodyMedium sm:text-bodyDefault text-dark70'
                 >
-                  How does it work and where to start? We've collected answers
-                  to most of the basic questions in order to be as open and
-                  transparent as possible.
+                  How does it work and where to start? We&apos;ve collected
+                  answers to most of the basic questions in order to be as open
+                  and transparent as possible.
                 </motion.p>
               </div>
               <FaqMenu />

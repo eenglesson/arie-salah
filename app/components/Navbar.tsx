@@ -90,7 +90,7 @@ export default function NavBar() {
           </aside>
         </button>
         <ul
-          className={`absolute left-0 w-full flex flex-col pb-[50px] pt-[100px] pl-[32px] gap-6 bg-black/40 rounded-b-3xl transition-all duration-[300ms] ease-in-out ${
+          className={`absolute left-0 w-full flex flex-col pb-[50px] pt-[100px] pl-[32px] gap-6 bg-black/40 rounded-b-3xl transition-all duration-300 ease-in-out ${
             isOpen ? 'top-0' : 'top-[-100%]'
           }`}
         >
