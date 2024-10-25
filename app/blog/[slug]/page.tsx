@@ -43,12 +43,12 @@ export default async function page({ params }: { params: { slug: string } }) {
                 <p className='w-fit text-bodyMedium px-4 py-2 border border-black rounded-lg'>
                   {data.badge}
                 </p>
-                <h2 className='text-h4 sm:text-h2 font-normal tracking-wide shrink-0'>
+                <h2 className='text-h3 sm:text-h2 font-normal tracking-wide shrink-0'>
                   {data.title}
                 </h2>
               </div>
-              <div className='flex flex-col xl:max-w-[800px] gap-10'>
-                <aside className='border-b pb-10 border-grey30 flex flex-col gap-6'>
+              <div className='flex flex-col xl:max-w-[800px] gap-6 sm:gap-10'>
+                <aside className='border-b pb-6 sm:pb-10 border-grey30 flex flex-col gap-6'>
                   <Image
                     src={urlFor(data.titleImage).url()}
                     alt={data.title}
@@ -66,7 +66,7 @@ export default async function page({ params }: { params: { slug: string } }) {
                   </h3>
                 </aside>
                 <div className='flex flex-col gap-6'>
-                  <div className='text-secondaryBlack prose-xl text-bodyMedium sm:text-bodyDefault'>
+                  <div className='text-secondaryBlack prose-xl text-bodyMedium sm:text-h4 prose-a:text-gold'>
                     <PortableText value={data.content} />
                   </div>
                 </div>
