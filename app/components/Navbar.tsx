@@ -48,15 +48,19 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className='flex sm:hidden items-center justify-between h-[80px] w-full px-[16px]'>
+      <nav className='flex sm:hidden items-center justify-between bg-secondaryBlack h-[64px] w-full px-[16px]'>
         <div className='rounded-full'>
-          <div className='rounded-full overflow-hidden w-[64px] h-[64px] relative'>
+          <div className='rounded-full z-40 items-center flex overflow-hidden w-[64px] h-[64px] relative'>
             <Image
               src='/assets/legal1.png'
               alt='Legal image'
-              fill
-              objectFit='contain'
-              objectPosition='center'
+              width={300}
+              height={300}
+              style={{
+                objectFit: 'cover', // Ensures the image covers its container
+                width: '100%', // Responsive width
+                height: 'auto', // Maintains aspect ratio
+              }}
               className='z-10'
             />
           </div>
@@ -90,7 +94,7 @@ export default function NavBar() {
           </aside>
         </button>
         <ul
-          className={`absolute left-0 w-full flex flex-col pb-[50px] pt-[100px] pl-[32px] gap-6 bg-black/40 rounded-b-3xl transition-all duration-300 ease-in-out ${
+          className={`absolute left-0 w-full flex flex-col pb-[50px] pt-[100px] pl-[48px] gap-6 bg-secondaryBlack z-20 rounded-b-3xl transition-all duration-300 ease-in-out ${
             isOpen ? 'top-0' : 'top-[-100%]'
           }`}
         >
@@ -110,15 +114,19 @@ export default function NavBar() {
         </ul>
       </nav>
 
-      <nav className='hidden sm:flex justify-between items-center'>
+      <nav className='hidden sm:flex justify-between h-[64px] items-center'>
         <div className='rounded-full'>
-          <div className='rounded-full overflow-hidden w-[64px] h-[64px] relative'>
+          <div className='rounded-full flex items-center  overflow-hidden w-[64px] h-[64px] relative'>
             <Image
               src='/assets/legal1.png'
               alt='Legal image'
-              fill
-              objectFit='contain'
-              objectPosition='center'
+              width={300}
+              height={300}
+              style={{
+                objectFit: 'cover', // Ensures the image covers its container
+                width: '100%', // Responsive width
+                height: 'auto', // Maintains aspect ratio
+              }}
             />
           </div>
         </div>

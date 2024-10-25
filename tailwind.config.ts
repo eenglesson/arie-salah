@@ -21,6 +21,7 @@ const config: Config = {
         primaryGreen: '#286247',
         superGreen: '#123833',
         primaryBlack: '#000000',
+        secondaryBlack: '#181818',
         primaryWhite: '#FFFFFF',
         secondaryGreen: '#7CC2A2',
         secondaryYellow: '#F0FF21',
@@ -123,6 +124,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 };
 export default config;

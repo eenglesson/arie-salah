@@ -33,24 +33,24 @@ function Button({
   const sizeClass = bigButton
     ? 'py-4 px-8'
     : link || linkBlack
-    ? 'p-0'
-    : 'py-2 px-5';
+      ? 'p-0'
+      : 'py-2 px-5';
 
   const colorClass = black
     ? 'bg-grey05 text-primaryBlack hover:bg-primaryWhite hover:border-primaryBlack'
     : green
-    ? 'bg-white text-primaryBlack hover:bg-primaryWhite hover:border-primaryBlack'
-    : yellow
-    ? 'bg-secondaryYellow text-primaryBlack hover:bg-primaryWhite border-secondaryYellow hover:border-primaryWhite'
-    : link || linkBlack
-    ? 'bg-transparent border-none group relative'
-    : 'bg-transparent text-primaryWhite hover:bg-white hover:text-primaryBlack border-white';
+      ? 'bg-white text-primaryBlack hover:bg-primaryWhite hover:border-primaryBlack'
+      : yellow
+        ? 'bg-secondaryYellow text-primaryBlack hover:bg-primaryWhite border-secondaryYellow hover:border-primaryWhite'
+        : link || linkBlack
+          ? 'bg-transparent border-none group relative'
+          : 'bg-transparent text-primaryWhite hover:bg-white hover:text-primaryBlack border-white';
 
   const textColor = link
     ? 'text-primaryWhite'
     : linkBlack
-    ? 'text-primaryBlack'
-    : '';
+      ? 'text-primaryBlack'
+      : '';
 
   const handleClick = () => {
     if (to) {
@@ -62,7 +62,7 @@ function Button({
 
   return (
     <button
-      className={`group flex text-bodyDefault font-light items-center gap-2 w-fit h-fit rounded-[64px] border-[0.5px] duration-300
+      className={`group flex text-bodyDefault font-light items-center gap-2 w-fit h-fit rounded-[32px] border-[1px] duration-300
     ${sizeClass} ${colorClass} ${textColor}`}
       onClick={handleClick}
     >

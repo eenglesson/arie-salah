@@ -1,11 +1,21 @@
 import React from 'react';
 import NavBar from '../components/Navbar';
 
-export default function page() {
+import Footer from '../components/Footer';
+import ReachOut from '../components/ReachOut';
+import BlogPosts from '../components/BlogPosts';
+
+export default async function page() {
   return (
     <>
-      <NavBar />
-      <h1>Blog</h1>
+      <div className='px-4 sm:px-16  bg-secondaryBlack'>
+        <NavBar />
+      </div>
+      <section className='max-w-[1600px] flex flex-col mx-auto px-4 gap-24 sm:gap-32 sm:px-16 pb-10'>
+        <BlogPosts />
+        <ReachOut />
+        <Footer />
+      </section>
     </>
   );
 }
