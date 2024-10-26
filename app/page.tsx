@@ -32,7 +32,7 @@ export default function Home() {
       <section className='max-w-[1600px] flex flex-col mx-auto px-4 gap-24 sm:gap-32 sm:px-16 pb-10'>
         <Services />
         <WeDo />
-        <BlogPosts />
+        <BlogPosts showButton={true} showOnly3={true} />
         <Faq />
         <ReachOut />
         <Footer />
