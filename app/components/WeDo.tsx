@@ -87,7 +87,7 @@ export default function WeDo() {
                 delay: index * 0.1,
               }}
               viewport={{ once: true, amount: 0.2 }}
-              className='flex flex-col w-full sm:w-1/2 lg:w-1/4 py-6 sm:py-8 gap-2 border-b hover:border-black transition-colors duration-300 border-grey30 flex-grow'
+              className='flex flex-col w-full sm:w-1/2 lg:w-1/4 py-6 sm:py-8 gap-2 border-b transition-colors duration-300 border-grey30 flex-grow'
             >
               <div>
                 <h4 className='text-h4 sm:text-h3 font-normal'>{service.id}</h4>

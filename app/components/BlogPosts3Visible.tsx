@@ -2,6 +2,7 @@ import React from 'react';
 import { client, urlFor } from '../lib/sanity';
 import { simpleBlogCard } from '../lib/types';
 import Image from 'next/image';
+import Button from './Button';
 import Link from 'next/link';
 
 async function getData() {
@@ -20,8 +21,9 @@ async function getData() {
   return data;
 }
 
-export default async function BlogPosts() {
+export default async function BlogPosts3Visible() {
   const data: simpleBlogCard[] = await getData();
+  const latestThree = data.slice(0, 3);
   console.log('Data retrieved from Sanity:', data);
 
   return (
@@ -29,24 +31,28 @@ export default async function BlogPosts() {
       <section>
         <aside className='w-full pt-[32px] xl:pt-[64px] flex flex-col gap-24'>
           <div className='flex flex-col xl:flex-row xl:justify-between gap-4'>
-            <h2 className='text-bodyDefault md:text-h4 font-normal tracking-wide shrink-0'>
-              Blog
+            <h2 className='text-bodyDefault font-normal tracking-wide shrink-0'>
+              The latest stories
             </h2>
             <div className='flex flex-col xl:max-w-[800px] gap-2'>
               <div className='flex flex-col gap-8'>
                 <h3 className='text-h3 font-normal xl:text-h2'>
-                  Where we keep you informed about the latest legal
-                  developments, firm announcements, and industry insights.
+                  Get the latest updates and relevant stories from our world.
                 </h3>
+                <div>
+                  <Button linkBlack arrow>
+                    Read Latest Stories
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-          <div className='w-full grid gap-16 h-full sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))]'>
-            {data.map((post, i) => (
+          <div className='w-full flex flex-col sm:flex-row flex-wrap items-stretch gap-16 h-full '>
+            {latestThree.map((post, i) => (
               <Link
                 href={`/blog/${post.currentSlug}`}
                 key={i}
-                className='flex flex-col gap-4 cursor-pointer group'
+                className='flex flex-col w-full sm:w-1/2 lg:w-1/4 gap-4 cursor-pointer flex-grow group'
               >
                 <div>
                   <div className='border-b pb-8 border-grey30'>
@@ -54,9 +60,14 @@ export default async function BlogPosts() {
                       <Image
                         src={urlFor(post.titleImage).url()}
                         alt={post.title}
-                        width={800} // Keep the same high resolution width
-                        height={800} // Keep the same high resolution height
-                        className='object-cover w-full h-auto group-hover:scale-105 transition-transform duration-300'
+                        width={800} // Use higher resolution width
+                        height={800} // Use higher resolution height
+                        style={{
+                          objectFit: 'cover', // Ensures the image covers its container
+                          width: '100%', // Responsive width
+                          height: 'auto', // Maintains aspect ratio
+                        }}
+                        className='group-hover:scale-105 transition-transform duration-300'
                       />
                     </div>
                   </div>
