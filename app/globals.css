@@ -11,6 +11,11 @@ html {
   letter-spacing: 0.2px;
 }
 
+html,
+body {
+  overflow-x: hidden; /* Prevents any horizontal overflow for the entire site */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
