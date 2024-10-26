@@ -61,7 +61,7 @@ export default function Footer() {
           providing comprehensive legal solutions tailored to meet the diverse
           needs of our clients.
         </motion.p>
-        <div className='flex flex-col gap-1'>
+        <div className='flex flex-col gap-2'>
           <motion.a
             variants={fadeInAnimationVariantsBottom}
             initial='initial'

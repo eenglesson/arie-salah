@@ -1,5 +1,6 @@
 // components/BackgroundSection.tsx
 import React from 'react';
+import Image from 'next/image';
 
 interface BackgroundSectionProps {
   children: React.ReactNode;
@@ -15,12 +16,19 @@ export default function BackgroundSection({
   className = '',
 }: BackgroundSectionProps) {
   return (
-    <section
-      className={`relative w-full bg-cover bg-center-top md:bg-center bg-no-repeat ${className}`}
-      style={{
-        backgroundImage: `url("${backgroundImage}")`,
-      }}
-    >
+    <section className={`relative w-full ${className}`}>
+      {/* Background Image */}
+      <div className='absolute inset-0 w-full h-full'>
+        <Image
+          src={backgroundImage}
+          alt='Background'
+          layout='fill'
+          objectFit='cover'
+          quality={50} // Adjust quality to reduce image size
+          priority // Ensures the image is loaded quickly since it's above the fold
+        />
+      </div>
+
       {/* Overlay for darkening the background */}
       <div className={`absolute inset-0 bg-black ${overlayOpacity}`}></div>
 
