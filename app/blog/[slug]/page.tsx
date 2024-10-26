@@ -38,13 +38,15 @@ export default async function page({ params }: { params: { slug: string } }) {
         <section className='pt-[32px] xl:pt-[64px]'>
           <aside className='w-full flex flex-col gap-24'>
             <div className='flex flex-col xl:flex-row xl:justify-between gap-4'>
-              <div className='flex flex-col justify-start w-full xl:w-1/3 gap-2'>
-                <span className='text-bodySmall sm:text-bodyMedium text-dark70'>
-                  {data.releaseDate}
-                </span>
-                <p className='w-fit text-bodyMedium px-4 py-2 border border-black rounded-lg'>
-                  {data.badge}
-                </p>
+              <div className='flex flex-col justify-start w-full xl:w-1/3 gap-8'>
+                <div className='flex justify-between items-center gap-2'>
+                  <p className='w-fit text-bodyMedium px-4 py-2 border border-black rounded-lg'>
+                    {data.badge}
+                  </p>
+                  <span className='text-bodySmall sm:text-bodyMedium text-dark70'>
+                    {data.releaseDate}
+                  </span>
+                </div>
                 <h2 className='text-h3 sm:text-h2 font-normal tracking-wide shrink-0'>
                   {data.title}
                 </h2>

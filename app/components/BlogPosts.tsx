@@ -1,39 +1,28 @@
 import React from 'react';
-import { client, urlFor } from '../lib/sanity';
+import { urlFor } from '../lib/sanity';
 import { simpleBlogCard } from '../lib/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from './Button';
-export const revalidate = 30; // revalidate at most 30 sec
 
-async function getData() {
-  const query = `
-  *[_type == 'blog'] {
-    title,
-      smallDescription,
-      'currentSlug': slug.current,
-      titleImage,
-      badge,
-      releaseDate,
-  }
-  `;
-  const data = await client.fetch(query);
+type BlogPostsProps = {
+  data: simpleBlogCard[];
+  showOnly3?: boolean;
+  showButton?: boolean;
+};
 
-  return data;
-}
-
-export default async function BlogPosts({
+export default function BlogPosts({
+  data = [],
   showOnly3 = false,
   showButton = false,
-}) {
-  const data: simpleBlogCard[] = await getData();
-  console.log('Data retrieved from Sanity:', data);
+}: BlogPostsProps) {
   const displayData = showOnly3 ? data.slice(0, 3) : data;
+
   return (
     <>
       <section>
         <aside className='w-full pt-[32px] xl:pt-[64px] flex flex-col gap-24'>
-          <div className='flex flex-col xl:flex-row xl:justify-between gap-4'>
+          <div className='flex flex-col xl:flex-row xl:justify-between gap-6'>
             <h2 className='text-bodyDefault md:text-h4 font-normal tracking-wide shrink-0'>
               Blog
             </h2>
@@ -57,24 +46,24 @@ export default async function BlogPosts({
             className={`w-full grid gap-12 h-full ${
               showOnly3
                 ? 'lg:grid-cols-3'
-                : 'grid-cols-[repeat(auto-fit,minmax(350px,1fr))]'
+                : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
             }`}
           >
             {displayData.map((post, i) => (
               <Link
                 href={`/blog/${post.currentSlug}`}
                 key={i}
-                className='flex flex-col gap-4 cursor-pointer group'
+                className='flex flex-col gap-4 justify-between cursor-pointer group'
               >
-                <div>
+                <div className='flex flex-col'>
                   <div className='border-b pb-8 border-grey30'>
-                    <div className='overflow-hidden rounded-2xl'>
+                    <div className='overflow-hidden rounded-2xl w-full'>
                       <Image
                         src={urlFor(post.titleImage).url()}
                         alt={post.title}
-                        width={800} // Keep the same high resolution width
-                        height={800} // Keep the same high resolution height
-                        className='object-cover w-full h-auto group-hover:scale-105 transition-transform duration-300'
+                        width={800}
+                        height={800}
+                        className='object-cover w-full md:h-[250px]  lg:h-[250px] xl:h-[300px]  group-hover:scale-105 transition-transform duration-300'
                       />
                     </div>
                   </div>
