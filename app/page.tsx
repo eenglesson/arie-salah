@@ -9,12 +9,11 @@ import Faq from './components/Faq';
 import ReachOut from './components/ReachOut';
 import Footer from './components/Footer';
 import BlogPosts from './components/BlogPosts';
-import BlogPosts3Visible from './components/BlogPosts3Visible';
 
 export default function Home() {
   return (
     <>
-      <div className='px-4 sm:px-16  bg-secondaryBlack'>
+      <div className='px-4 sm:px-16 w-full bg-secondaryBlack'>
         <Navbar />
       </div>
       <BackgroundSection
@@ -33,7 +32,7 @@ export default function Home() {
       <section className='max-w-[1600px] flex flex-col mx-auto px-4 gap-24 sm:gap-32 sm:px-16 pb-10'>
         <Services />
         <WeDo />
-        <BlogPosts3Visible />
+        <BlogPosts />
         <Faq />
         <ReachOut />
         <Footer />

@@ -58,7 +58,7 @@ export default function Hero() {
           viewport={{ once: true }}
           className='flex gap-12 h-fit w-full items-center'
         >
-          <Button link arrow>
+          <Button to='/contact' link arrow>
             Book an appointment
           </Button>
         </motion.div>

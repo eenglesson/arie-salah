@@ -25,7 +25,7 @@ const config: Config = {
         primaryWhite: '#FFFFFF',
         secondaryGreen: '#7CC2A2',
         secondaryYellow: '#F0FF21',
-        secondaryBeige: '#F9F5EE',
+        secondaryBeige: '#F7F5EE',
         gold: '#82764F',
         dark70: '#666666',
         dark50: '#969696',

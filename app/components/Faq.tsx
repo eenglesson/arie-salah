@@ -9,7 +9,7 @@ export default function Faq() {
   return (
     <>
       <section>
-        <aside className='w-full flex flex-col gap-24'>
+        <aside className='w-full flex flex-col gap-24 '>
           <div className='flex flex-col xl:flex-row xl:justify-between gap-4'>
             <div className='flex flex-col justify-between'>
               <motion.h2

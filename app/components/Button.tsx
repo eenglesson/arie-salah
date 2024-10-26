@@ -2,19 +2,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowUpRight } from 'lucide-react';
-
-type ButtonProps = {
-  children: React.ReactNode;
-  onClick?: () => void;
-  to?: string;
-  bigButton?: boolean;
-  arrow?: boolean;
-  black?: boolean;
-  green?: boolean;
-  yellow?: boolean;
-  link?: boolean;
-  linkBlack?: boolean;
-};
+import { ButtonProps } from '../lib/types';
 
 function Button({
   children,

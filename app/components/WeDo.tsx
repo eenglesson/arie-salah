@@ -45,7 +45,7 @@ const services = [
 
 export default function WeDo() {
   return (
-    <section className='p-8 sm:p-12 bg-secondaryBeige rounded-2xl h-full'>
+    <section className='p-8 sm:p-12 bg-secondaryBeige rounded-2xl h-full shadow-lg'>
       <aside className='w-full flex flex-col gap-12 lg:gap-24 h-full'>
         {/* Top section with title */}
         <div className='flex flex-col xl:flex-row xl:justify-between gap-4'>

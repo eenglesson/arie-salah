@@ -16,3 +16,16 @@ export type fullBlog = {
   badge: string;
   releaseDate: string;
 };
+
+export type ButtonProps = {
+  children: React.ReactNode;
+  onClick?: () => void;
+  to?: string;
+  bigButton?: boolean;
+  arrow?: boolean;
+  black?: boolean;
+  green?: boolean;
+  yellow?: boolean;
+  link?: boolean;
+  linkBlack?: boolean;
+};

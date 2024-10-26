@@ -3,6 +3,8 @@ import { client, urlFor } from '../lib/sanity';
 import { simpleBlogCard } from '../lib/types';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from './Button';
+export const revalidate = 30; // revalidate at most 30 sec
 
 async function getData() {
   const query = `
@@ -20,10 +22,13 @@ async function getData() {
   return data;
 }
 
-export default async function BlogPosts() {
+export default async function BlogPosts({
+  showOnly3 = false,
+  showButton = false,
+}) {
   const data: simpleBlogCard[] = await getData();
   console.log('Data retrieved from Sanity:', data);
-
+  const displayData = showOnly3 ? data.slice(0, 3) : data;
   return (
     <>
       <section>
@@ -38,11 +43,24 @@ export default async function BlogPosts() {
                   Where we keep you informed about the latest legal
                   developments, firm announcements, and industry insights.
                 </h3>
+                {showButton && (
+                  <div>
+                    <Button to='/blog' linkBlack arrow>
+                      Read Latest Stories
+                    </Button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
-          <div className='w-full grid gap-16 h-full sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))]'>
-            {data.map((post, i) => (
+          <div
+            className={`w-full grid gap-12 h-full ${
+              showOnly3
+                ? 'lg:grid-cols-3'
+                : 'grid-cols-[repeat(auto-fit,minmax(350px,1fr))]'
+            }`}
+          >
+            {displayData.map((post, i) => (
               <Link
                 href={`/blog/${post.currentSlug}`}
                 key={i}

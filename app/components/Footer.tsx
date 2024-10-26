@@ -14,10 +14,10 @@ type Link = {
 
 export default function Footer() {
   const companyLinks: Link[] = [
-    { name: 'Home', path: '#' },
-    { name: 'About', path: '#' },
-    { name: 'Contact', path: '#' },
-    { name: 'Blog', path: '#' },
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
+    { name: 'Blog', path: '/blog' },
   ];
 
   const socialLinks: Link[] = [

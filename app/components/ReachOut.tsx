@@ -8,7 +8,7 @@ import Button from './Button';
 export default function ReachOut() {
   return (
     <>
-      <section className='p-8 sm:p-12  bg-secondaryBeige rounded-2xl h-full'>
+      <section className='p-8 sm:p-12 ld bg-secondaryBeige  rounded-2xl h-full shadow-lg'>
         <aside className='w-full flex flex-col gap-12 lg:gap-24 h-full'>
           {/* Top section with title */}
           <div className='flex flex-col xl:flex-row xl:justify-between gap-4'>
@@ -33,7 +33,7 @@ export default function ReachOut() {
                 towards effective solutions and legal counsel.
               </motion.p>
             </div>
-            <div className='flex flex-col xl:max-w-[800px] gap-12'>
+            <div className='flex flex-col xl:max-w-[800px] gap-12 xl:gap-24'>
               <div>
                 <motion.h3
                   variants={fadeInAnimationVariantsBottom}
@@ -63,7 +63,7 @@ export default function ReachOut() {
                 viewport={{ once: true }}
                 className='flex xl:justify-end'
               >
-                <Button linkBlack arrow>
+                <Button to='/contact' linkBlack arrow>
                   Get in touch
                 </Button>
               </motion.div>
