@@ -6,9 +6,9 @@ import { fadeInAnimationVariantsRight } from '@/lib/framerMotion';
 
 export default function Hero() {
   return (
-    <header className='flex justify-between items-center w-full gap-10 py-20 sm:py-40'>
+    <header className='flex justify-between items-center w-full gap-10 py-32 sm:py-40'>
       {/* Text section on the left */}
-      <aside className='flex flex-col gap-14'>
+      <aside className='flex flex-col gap-6 sm:gap-14'>
         <div className='sm:w-[90%]'>
           <motion.h1
             variants={fadeInAnimationVariantsRight}

@@ -104,9 +104,14 @@ export default function NavBar() {
               variants={fadeInAnimationVariants}
               initial='initial'
               whileInView='animate'
-              className='z-50'
+              className='z-20'
             >
-              <Button to={link.path} link linkBlack={pathname === link.path}>
+              <Button
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                link
+                linkBlack={pathname === link.path}
+              >
                 <p className='text-bodyDefault'> {link.label}</p>
               </Button>
             </motion.li>

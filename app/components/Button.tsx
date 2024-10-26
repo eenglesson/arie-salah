@@ -41,10 +41,12 @@ function Button({
       : '';
 
   const handleClick = () => {
+    if (onClick) {
+      onClick(); // Always execute onClick if provided
+    }
+
     if (to) {
-      router.push(to);
-    } else if (onClick) {
-      onClick();
+      router.push(to); // Then navigate if a route is provided
     }
   };
 

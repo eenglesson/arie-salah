@@ -29,23 +29,27 @@ export default function Footer() {
   return (
     <footer className='flex flex-col w-full gap-12 pb-12 border-b border-grey30 xl:flex-row'>
       <aside className='flex flex-col gap-4 w-full '>
-        <div className='rounded-full'>
+        <div>
           <motion.div
             variants={fadeInAnimationVariantsBottom}
             initial='initial'
             whileInView='animate'
             viewport={{ once: true }}
-            className='overflow-hidden w-[96px] h-[96px] relative'
+            className='overflow-hidden w-[64px] h-[64px] sm:w-[96px] sm:h-[96px] relative'
           >
             <Image
               src='/assets/legal1.png'
               alt='Legal image'
               fill
-              objectFit='cover'
-              objectPosition='center'
+              sizes='96px' // Specify the size here to match the container size
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
             />
           </motion.div>
         </div>
+
         <motion.p
           variants={fadeInAnimationVariantsBottom}
           initial='initial'
