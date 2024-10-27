@@ -23,7 +23,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start 10%', 'end 50%'],
+    offset: ['start 20%', 'end 50%'],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -35,14 +35,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       initial='initial'
       whileInView='animate'
       viewport={{ once: true }}
-      className='w-full  bg-white dark:bg-neutral-950 font-sans '
+      className='w-full  bg-white dark:bg-neutral-950 font-sans -mt-10'
       ref={containerRef}
     >
-      <div ref={ref} className='relative pb-20'>
+      <div ref={ref} className='relative pb-20 '>
         {data.map((item, index) => (
           <div
             key={index}
-            className='flex justify-start pt-16 md:pt-40 md:gap-10'
+            className='flex justify-start pt-16 md:pt-32 md:gap-10 ' //
           >
             <div className='sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full'>
               <div className='h-10 absolute rounded-full bg-white dark:bg-black flex items-center justify-center'>
@@ -55,8 +55,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             <div className='relative pl-16 pr-4 md:pl-4 w-full'>
-              <div className='md:hidden block pt-2 mb-4'>
-                <h3 className='text-h4 tracking-wide  text-left font-normal text-black '>
+              <div className='md:hidden block mb-4'>
+                <h3 className='text-h4 tracking-wide text-left font-normal text-black '>
                   {item.title}
                 </h3>
                 <p className='text-bodyDefault text-dark50'>{item.date}</p>
