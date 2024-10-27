@@ -68,10 +68,11 @@ export default function Footer() {
             whileInView='animate'
             viewport={{ once: true }}
             className='hover:underline group flex items-center gap-2'
+            href='mailto:SalahLegal@outlook.com'
           >
             <Mail size={16} />
             <span className='text-dark70 text-bodyMedium sm:text-bodyDefault hover:text-black'>
-              SalahLegal@gmail.com
+              SalahLegal@outlook.com
             </span>
           </motion.a>
           <motion.a

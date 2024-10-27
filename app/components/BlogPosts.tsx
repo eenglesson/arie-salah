@@ -59,7 +59,7 @@ export default function BlogPosts({
             </div>
           </div>
           <div
-            className={`w-full grid gap-12 h-full ${
+            className={`w-full grid gap-16 sm:gap-12 h-full ${
               showOnly3
                 ? 'lg:grid-cols-3'
                 : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
@@ -72,18 +72,18 @@ export default function BlogPosts({
                 className='flex flex-col gap-4 justify-between cursor-pointer group'
               >
                 <div className='flex flex-col'>
-                  <div className='border-b pb-8 border-grey30'>
+                  <div className='border-b pb-5 sm:pb-8 border-grey30'>
                     <div className='overflow-hidden rounded-2xl w-full'>
                       <Image
                         src={urlFor(post.titleImage).url()}
                         alt={post.title}
                         width={800}
                         height={800}
-                        className='object-cover w-full md:h-[250px]  lg:h-[250px] xl:h-[300px]  group-hover:scale-105 transition-transform duration-300'
+                        className='object-cover w-full md:h-[250px] lg:h-[250px] xl:h-[300px]  group-hover:scale-105 transition-transform duration-300'
                       />
                     </div>
                   </div>
-                  <h5 className='text-h4 sm:text-h3 pt-5 font-normal'>
+                  <h5 className='text-h4 sm:text-h3 pt-3 sm:pt-5 font-normal'>
                     {post.title}
                   </h5>
                 </div>
