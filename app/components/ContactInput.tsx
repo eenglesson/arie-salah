@@ -2,7 +2,6 @@
 
 import { fadeInAnimationVariantsBottom } from '@/lib/framerMotion';
 import React from 'react';
-import ServicesMenu from './ServicesMenu';
 import RecurringClients from './RecurringClients';
 
 import { motion } from 'framer-motion';

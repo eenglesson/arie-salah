@@ -1,9 +1,7 @@
 import React from 'react';
 import NavBar from '../components/Navbar';
-import ReachOut from '../components/ReachOut';
 import Footer from '../components/Footer';
 import ContactInput from '../components/ContactInput';
-import BlogPosts from '../components/BlogPosts';
 
 export default function page() {
   return (
