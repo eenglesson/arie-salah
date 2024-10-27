@@ -1,9 +1,13 @@
+'use client';
 import React from 'react';
 import { urlFor } from '../lib/sanity';
 import { simpleBlogCard } from '../lib/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from './Button';
+
+import { fadeInAnimationVariantsBottom } from '@/lib/framerMotion';
+import { motion } from 'framer-motion';
 
 type BlogPostsProps = {
   data: simpleBlogCard[];
@@ -23,15 +27,27 @@ export default function BlogPosts({
       <section>
         <aside className='w-full pt-[32px] xl:pt-[64px] flex flex-col gap-24'>
           <div className='flex flex-col xl:flex-row xl:justify-between gap-6'>
-            <h2 className='text-bodyDefault md:text-h4 font-normal tracking-wide shrink-0'>
+            <motion.h2
+              variants={fadeInAnimationVariantsBottom}
+              initial='initial'
+              whileInView='animate'
+              viewport={{ once: true }}
+              className='text-bodyDefault md:text-h4 font-normal tracking-wide shrink-0'
+            >
               Blog
-            </h2>
+            </motion.h2>
             <div className='flex flex-col xl:max-w-[800px] gap-2'>
               <div className='flex flex-col gap-8'>
-                <h3 className='text-h3 font-normal xl:text-h2'>
+                <motion.h3
+                  variants={fadeInAnimationVariantsBottom}
+                  initial='initial'
+                  whileInView='animate'
+                  viewport={{ once: true }}
+                  className='text-h3 font-normal xl:text-h2'
+                >
                   Where we keep you informed about the latest legal
                   developments, firm announcements, and industry insights.
-                </h3>
+                </motion.h3>
                 {showButton && (
                   <div>
                     <Button to='/blog' linkBlack arrow>

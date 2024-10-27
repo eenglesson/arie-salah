@@ -65,12 +65,12 @@ export default async function page({ params }: { params: { slug: string } }) {
                     }}
                     className='group-hover:scale-105 rounded-2xl transition-transform duration-300 '
                   />
-                  <h3 className='text-h4 font-normal xl:text-h3'>
+                  <h3 className='text-h4 font-normal xl:text-h2'>
                     {data.smallDescription}
                   </h3>
                 </aside>
                 <div className='flex flex-col gap-6'>
-                  <div className='text-secondaryBlack prose-xl text-bodyMedium sm:text-h4 prose-a:text-gold'>
+                  <div className='text-secondaryBlack prose-xl text-bodyDefault sm:text-h4 prose-a:text-gold'>
                     <PortableText value={data.content} />
                   </div>
                 </div>
