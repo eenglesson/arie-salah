@@ -1,8 +1,13 @@
 'use client';
+
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowUpRight } from 'lucide-react';
 import { ButtonProps } from '../lib/types';
+
+interface ExtendedButtonProps extends ButtonProps {
+  isActive?: boolean; // Added isActive to indicate if the button is for the current page
+}
 
 function Button({
   children,
@@ -15,7 +20,8 @@ function Button({
   yellow,
   link,
   linkBlack,
-}: ButtonProps) {
+  isActive,
+}: ExtendedButtonProps) {
   const router = useRouter();
 
   const sizeClass = bigButton
@@ -60,9 +66,16 @@ function Button({
         {children}
         {(link || linkBlack) && (
           <span
-            className={`absolute left-0 bottom-0 w-full h-[1px] ${
-              link ? 'bg-white' : 'bg-primaryBlack'
-            } transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}
+            className={`absolute left-0 -bottom-0.5 w-full h-[1px] ${
+              isActive
+                ? linkBlack
+                  ? 'bg-white'
+                  : 'bg-white'
+                : linkBlack
+                  ? 'bg-primaryBlack transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100'
+                  : 'bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100'
+            }`}
+            style={isActive ? { transform: 'scaleX(1)' } : {}}
           />
         )}
       </span>

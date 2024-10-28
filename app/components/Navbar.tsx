@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'; // usePathname for client-side ro
 import Button from './Button';
 import Image from 'next/image';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const fadeInAnimationVariants = {
   initial: {
@@ -51,18 +52,20 @@ export default function NavBar() {
       <nav className='flex sm:hidden items-center justify-between bg-secondaryBlack h-[64px] w-full px-[16px]'>
         <div className='rounded-full'>
           <div className='rounded-full z-40 items-center flex overflow-hidden w-[64px] h-[64px] relative'>
-            <Image
-              src='/assets/legal1.png'
-              alt='Legal image'
-              width={300}
-              height={300}
-              style={{
-                objectFit: 'cover', // Ensures the image covers its container
-                width: '100%', // Responsive width
-                height: 'auto', // Maintains aspect ratio
-              }}
-              className='z-10'
-            />
+            <Link href='/' onClick={() => setIsOpen(false)}>
+              <Image
+                src='/assets/legal1.png'
+                alt='Legal image'
+                width={300}
+                height={300}
+                style={{
+                  objectFit: 'cover',
+                  width: '100%',
+                  height: 'auto',
+                }}
+                className='z-10'
+              />
+            </Link>
           </div>
         </div>
         <button className='relative inline-block z-40 bg-none cursor-default'>
@@ -70,7 +73,6 @@ export default function NavBar() {
             className='flex flex-col justify-center gap-[6px] cursor-pointer w-[28px] h-[22px]'
             onClick={toggleHamburger}
           >
-            {/* First Line */}
             <span
               className={`w-full h-[2px] bg-white rounded-full ${
                 hasClicked
@@ -80,8 +82,6 @@ export default function NavBar() {
                   : ''
               }`}
             ></span>
-
-            {/* Second Line */}
             <span
               className={`w-full h-[2px] bg-white rounded-full ${
                 hasClicked
@@ -111,6 +111,7 @@ export default function NavBar() {
                 onClick={() => setIsOpen(false)}
                 link
                 linkBlack={pathname === link.path}
+                isActive={pathname === link.path}
               >
                 <p className='text-bodyDefault'> {link.label}</p>
               </Button>
@@ -121,25 +122,32 @@ export default function NavBar() {
 
       <nav className='hidden sm:flex justify-between h-[64px] items-center'>
         <div className='rounded-full'>
-          <div className='rounded-full flex items-center  overflow-hidden w-[64px] h-[64px] relative'>
-            <Image
-              src='/assets/legal1.png'
-              alt='Legal image'
-              width={300}
-              height={300}
-              style={{
-                objectFit: 'cover', // Ensures the image covers its container
-                width: '100%', // Responsive width
-                height: 'auto', // Maintains aspect ratio
-              }}
-            />
+          <div className='rounded-full flex items-center overflow-hidden w-[64px] h-[64px] relative'>
+            <Link href='/' onClick={() => setIsOpen(false)}>
+              <Image
+                src='/assets/legal1.png'
+                alt='Legal image'
+                width={300}
+                height={300}
+                style={{
+                  objectFit: 'cover',
+                  width: '100%',
+                  height: 'auto',
+                }}
+              />
+            </Link>
           </div>
         </div>
         <ul className='flex gap-8'>
           {links.map((link) => (
             <li key={link.path}>
-              <Button to={link.path} link linkBlack={pathname === link.path}>
-                <p className='text-bodyDefault '> {link.label}</p>
+              <Button
+                to={link.path}
+                link
+                linkBlack={pathname === link.path}
+                isActive={pathname === link.path}
+              >
+                <p className='text-bodyDefault'>{link.label}</p>
               </Button>
             </li>
           ))}

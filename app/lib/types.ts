@@ -28,4 +28,5 @@ export type ButtonProps = {
   yellow?: boolean;
   link?: boolean;
   linkBlack?: boolean;
+  isActive?: boolean;
 };
