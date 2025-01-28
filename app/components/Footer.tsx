@@ -115,11 +115,10 @@ export default function Footer() {
                 }}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <a
-                  href={link.path}
-                  className='underline-animation text-bodyMedium sm:text-bodyDefault'
-                >
-                  {link.name}
+                <a href={link.path}>
+                  <p className='w-fit underline-animation text-bodyMedium sm:text-bodyDefault'>
+                    {link.name}
+                  </p>
                 </a>
               </motion.li>
             ))}
@@ -150,11 +149,10 @@ export default function Footer() {
                 }}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <a
-                  href={link.path}
-                  className='underline-animation text-bodyMedium sm:text-bodyDefault'
-                >
-                  {link.name}
+                <a href={link.path}>
+                  <p className='w-fit underline-animation text-bodyMedium sm:text-bodyDefault'>
+                    {link.name}
+                  </p>
                 </a>
               </motion.li>
             ))}

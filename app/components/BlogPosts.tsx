@@ -49,11 +49,16 @@ export default function BlogPosts({
                   developments, firm announcements, and industry insights.
                 </motion.h3>
                 {showButton && (
-                  <div>
+                  <motion.div
+                    variants={fadeInAnimationVariantsBottom}
+                    initial='initial'
+                    whileInView='animate'
+                    viewport={{ once: true }}
+                  >
                     <Button to='/blog' linkBlack arrow>
                       Read Latest Stories
                     </Button>
-                  </div>
+                  </motion.div>
                 )}
               </div>
             </div>
@@ -71,30 +76,44 @@ export default function BlogPosts({
                 key={i}
                 className='flex flex-col gap-4 justify-between cursor-pointer group'
               >
-                <div className='flex flex-col'>
-                  <div className='border-b pb-5 sm:pb-8 border-grey30'>
-                    <div className='overflow-hidden rounded-2xl w-full'>
-                      <Image
-                        src={urlFor(post.titleImage).url()}
-                        alt={post.title}
-                        width={800}
-                        height={800}
-                        className='object-cover w-full md:h-[250px] lg:h-[250px] xl:h-[300px]  group-hover:scale-105 transition-transform duration-300'
-                      />
+                <motion.aside
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.2,
+                    type: 'spring',
+                    stiffness: 60,
+                    damping: 20,
+                    delay: i * 0.1,
+                  }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  className='flex flex-col h-full gap-4 justify-between '
+                >
+                  <div className='flex flex-col'>
+                    <div className='border-b pb-5 sm:pb-8 border-grey30'>
+                      <div className='overflow-hidden rounded-2xl w-full'>
+                        <Image
+                          src={urlFor(post.titleImage).url()}
+                          alt={post.title}
+                          width={800}
+                          height={800}
+                          className='object-cover w-full md:h-[250px] lg:h-[250px] xl:h-[300px]  group-hover:scale-105 transition-transform duration-300'
+                        />
+                      </div>
                     </div>
+                    <h5 className='text-h4 sm:text-h3 pt-3 sm:pt-5 font-normal'>
+                      {post.title}
+                    </h5>
                   </div>
-                  <h5 className='text-h4 sm:text-h3 pt-3 sm:pt-5 font-normal'>
-                    {post.title}
-                  </h5>
-                </div>
-                <div className='flex justify-between items-center'>
-                  <b className='text-bodyMedium px-4 py-2 border border-black rounded-lg'>
-                    {post.badge}
-                  </b>
-                  <span className='text-bodyMedium text-dark70'>
-                    {post.releaseDate}
-                  </span>
-                </div>
+                  <div className='flex justify-between items-center'>
+                    <b className='text-bodyMedium px-4 py-2 border border-black rounded-lg'>
+                      {post.badge}
+                    </b>
+                    <span className='text-bodyMedium text-dark70'>
+                      {post.releaseDate}
+                    </span>
+                  </div>
+                </motion.aside>
               </Link>
             ))}
           </div>

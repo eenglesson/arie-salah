@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation'; // usePathname for client-side routing
 import Button from './Button';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const fadeInAnimationVariants = {
@@ -46,6 +46,18 @@ export default function NavBar() {
     setIsOpen(!isOpen);
     setHasClicked(true); // När användaren klickar aktiveras animationerna
   };
+
+  const handleScroll = () => {
+    if (window.scrollY > 30) {
+      // Replace 100 with any threshold you prefer
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
