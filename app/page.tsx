@@ -5,7 +5,6 @@ import BackgroundSection from './components/BackgroundSection';
 import Services from './components/Services';
 import WeDo from './components/WeDo';
 
-import Faq from './components/Faq';
 import ReachOut from './components/ReachOut';
 import Footer from './components/Footer';
 import BlogPosts from './components/BlogPosts';
