@@ -61,7 +61,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className='flex sm:hidden items-center justify-between bg-secondaryBlack h-[64px] w-full px-[16px]'>
+      <nav className='flex md:hidden items-center justify-between bg-secondaryBlack h-[64px] w-full px-[16px]  '>
         <div className='rounded-full'>
           <div className='rounded-full z-40 items-center flex overflow-hidden w-[64px] h-[64px] relative'>
             <Link href='/' onClick={() => setIsOpen(false)}>
@@ -106,7 +106,7 @@ export default function NavBar() {
           </aside>
         </button>
         <ul
-          className={`absolute left-0 w-full flex flex-col pb-[50px] pt-[100px] pl-[48px] gap-6 bg-secondaryBlack z-20 rounded-b-3xl transition-all duration-300 ease-in-out ${
+          className={`absolute left-0 w-full flex flex-col pb-[50px] pt-[100px] pl-[48px] sm:pl-[96px] gap-6 bg-secondaryBlack z-20 rounded-b-3xl transition-all duration-300 ease-in-out ${
             isOpen ? 'top-0' : 'top-[-100%]'
           }`}
         >
@@ -132,7 +132,7 @@ export default function NavBar() {
         </ul>
       </nav>
 
-      <nav className='hidden sm:flex justify-between h-[64px] items-center'>
+      <nav className='hidden md:flex justify-between h-[64px] items-center'>
         <div className='rounded-full'>
           <div className='rounded-full flex items-center overflow-hidden w-[64px] h-[64px] relative'>
             <Link href='/' onClick={() => setIsOpen(false)}>
@@ -164,7 +164,7 @@ export default function NavBar() {
             </li>
           ))}
         </ul>
-        <Button to='/contact'>Hire Us</Button>
+        <Button to='/contact'>Schakel ons in</Button>
       </nav>
     </>
   );

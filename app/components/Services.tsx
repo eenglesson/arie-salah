@@ -20,7 +20,7 @@ export default function Services() {
                 viewport={{ once: true }}
                 className='text-bodyDefault font-normal tracking-wide shrink-0'
               >
-                Salah Legal ESQ. — Protecting Your Legal Rights.
+                Salah Legal ESQ. — Our Expertise.
               </motion.h2>
               {/* Container for Image, middle of the div */}
             </div>
@@ -31,11 +31,10 @@ export default function Services() {
                   initial='initial'
                   whileInView='animate'
                   viewport={{ once: true }}
-                  className='text-h3 font-normal xl:text-h2'
+                  className='text-h3 font-normal xl:text-h2 hyphens-auto'
                 >
-                  At Salah Legal ESQ. We pride ourselves on being a leading
-                  consulting law firm dedicated to providing comprehensive legal
-                  solutions tailored to meet the diverse needs of our clients.
+                  Wij zijn gespecialiseerd in een breed scala aan
+                  bestuursrechtelijke vraagstukken.
                 </motion.h3>
                 <motion.p
                   variants={fadeInAnimationVariantsBottom}
@@ -44,9 +43,10 @@ export default function Services() {
                   viewport={{ once: true }}
                   className='text-dark70 text-bodyMedium sm:text-bodyDefault'
                 >
-                  our values serve as the foundation of everything we do. They
-                  reflect our commitment to excellence, integrity, and a
-                  client-centric approach.
+                  Wij staan zowel overheden als andere partijen bij in complexe
+                  bestuursrechtelijke procedures, of het nu gaat om advisering,
+                  bezwaar- en beroepsprocedures, of het uitvoeren van juridische
+                  risicoanalyses.
                 </motion.p>
               </div>
               <ServicesMenu />

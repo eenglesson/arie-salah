@@ -7,37 +7,51 @@ import { fadeInAnimationVariantsRight } from '@/lib/framerMotion';
 const services = [
   {
     id: 1,
-    title: 'Integrity',
+    title: 'Participatiewet',
     about: [
-      'Upholding honesty and ethical behavior in all interactions, ensuring transparency and trustworthiness in every aspect of our practice.',
+      'Advies en procedures omtrent de rechten en verplichtingen op het gebied van werk en sociale zekerheid.',
     ],
   },
   {
     id: 2,
-    title: 'Excellence',
+    title: 'Omgevingswet',
     about: [
-      'Striving for the highest standards of quality and performance, continuously seeking improvement and delivering exceptional results to our clients.',
+      'Begeleiding bij de implementatie en uitvoering van de Omgevingswet, inclusief vergunningen en handhaving.',
     ],
   },
   {
     id: 3,
-    title: 'Client-Centric Approach',
+    title: 'Jeugdwet',
     about: [
-      'Placing the needs and interests of our clients at the forefront, providing personalized attention, and tailoring solutions to meet their unique circumstances.',
+      'Juridisch advies over de zorg en ondersteuning van jeugdigen, inclusief jeugdbescherming en jeugdhulp.',
     ],
   },
   {
     id: 4,
-    title: 'Collaboration',
+    title: 'WMO 2015',
     about: [
-      'Embracing teamwork and cooperation within our firm, leveraging diverse perspectives and expertise to provide comprehensive solutions and achieve collective success.',
+      'Hulp bij de wet maatschappelijke ondersteuning, inclusief ondersteuning voor mensen met een beperking.',
     ],
   },
   {
     id: 5,
-    title: 'Community Engagement',
+    title: 'Handhavingsrecht',
     about: [
-      'Demonstrating a commitment to social responsibility and making a positive impact in the communities we serve through pro bono work, volunteerism.',
+      'Begeleiding bij het nemen van handhavingsmaatregelen en de verdediging van besluiten in bezwaar en beroep.',
+    ],
+  },
+  {
+    id: 6,
+    title: 'Gemeentewet',
+    about: [
+      'Advies over gemeentelijke besluitvorming, bevoegdheden en verordeningen.',
+    ],
+  },
+  {
+    id: 7,
+    title: 'Wet open overheid (Woo)',
+    about: [
+      'Ondersteuning bij verzoeken om informatie op grond van de Wet open overheid.',
     ],
   },
 ];

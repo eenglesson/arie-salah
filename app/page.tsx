@@ -53,7 +53,7 @@ export default async function Home() {
         <Services />
         <WeDo />
         <BlogPosts data={data} showButton={true} showOnly3={true} />
-        <Faq />
+        {/* <Faq /> */}
         <ReachOut />
         <Footer />
       </section>

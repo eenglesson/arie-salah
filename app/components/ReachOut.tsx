@@ -20,7 +20,7 @@ export default function ReachOut() {
                 viewport={{ once: true }}
                 className='text-bodyDefault font-normal tracking-wide shrink-0'
               >
-                Reach Out
+                Neem contact op
               </motion.h2>
               <motion.p
                 variants={fadeInAnimationVariantsBottom}
@@ -29,8 +29,8 @@ export default function ReachOut() {
                 viewport={{ once: true }}
                 className='hidden text-bodyMedium sm:text-bodyDefault  xl:flex max-w-[400px] text-dark70'
               >
-                Connect with us today and let our experienced team guide you
-                towards effective solutions and legal counsel.
+                Neem dan gerust contact met ons op. Wij staan klaar om u te
+                ondersteunen bij al uw bestuursrechtelijke vraagstukken.
               </motion.p>
             </div>
             <div className='flex flex-col xl:max-w-[800px] gap-12 xl:gap-24'>
@@ -42,8 +42,8 @@ export default function ReachOut() {
                   viewport={{ once: true }}
                   className='text-h3 font-normal xl:text-h2'
                 >
-                  We look forward to supporting you with tailored legal
-                  solutions. Let’s get started.
+                  Heeft u vragen of wilt u een vrijblijvend gesprek over hoe wij
+                  u kunnen helpen?
                 </motion.h3>
                 <motion.p
                   variants={fadeInAnimationVariantsBottom}
@@ -52,8 +52,8 @@ export default function ReachOut() {
                   viewport={{ once: true }}
                   className='flex xl:hidden text-bodyMedium sm:text-bodyDefault text-dark70'
                 >
-                  Connect with us today and let our experienced team guide you
-                  towards effective solutions and legal counsel.
+                  Neem dan gerust contact met ons op. Wij staan klaar om u te
+                  ondersteunen bij al uw bestuursrechtelijke vraagstukken.
                 </motion.p>
               </div>
               <motion.div
@@ -64,7 +64,7 @@ export default function ReachOut() {
                 className='flex xl:justify-end'
               >
                 <Button to='/contact' linkBlack arrow>
-                  Get in touch
+                  Neem contact op
                 </Button>
               </motion.div>
             </div>

@@ -15,9 +15,13 @@ export default function Hero() {
             initial='initial'
             whileInView='animate'
             viewport={{ once: true }}
-            className='text-h1 font-playfair md:text-display text-white'
+            className='text-h3 font-playfair md:text-h1 text-white'
           >
-            The Law Is The Public Conscience
+            Welkom bij Salah Legal Esq.
+            <span className='block h-0 xl:hidden'>
+              <br />
+            </span>{' '}
+            – Uw expert in bestuursrecht
           </motion.h1>
           <motion.p
             variants={fadeInAnimationVariantsRight}
@@ -36,9 +40,14 @@ export default function Hero() {
             viewport={{ once: true }}
             className='text-grey20 text-bodySmall sm:text-bodyDefault max-w-[70%]'
           >
-            With Tailored Solutions and Expert Consultation, We Navigate Complex
-            Legal Terrain Together, Ensuring Your Peace of Mind and Empowering
-            Your Journey Toward Achieving Your Goals.
+            Salah Legal Esq. is een jong en dynamisch juridisch adviesbureau,
+            opgericht in november 2023, dat zich volledig richt op het
+            bestuursrecht. Wij bieden praktische en strategische juridische
+            ondersteuning aan overheden, bedrijven en individuen bij
+            vraagstukken rondom het bestuursrecht. Onder leiding van A. (Arie)
+            Salah, een ervaren specialist in dit vakgebied, combineren wij
+            gedegen kennis van de wetgeving met een pragmatische benadering van
+            juridische vraagstukken.
           </motion.p>
         </div>
         <motion.div
@@ -59,7 +68,7 @@ export default function Hero() {
           className='flex gap-12 h-fit w-full items-center'
         >
           <Button to='/contact' link arrow>
-            Book an appointment
+            Afspraak maken
           </Button>
         </motion.div>
       </aside>
