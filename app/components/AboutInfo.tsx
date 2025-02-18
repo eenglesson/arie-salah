@@ -8,66 +8,72 @@ import { Timeline } from './Timeline';
 
 const timelineData = [
   {
-    title: 'Opening a New Branch',
+    title: 'Participatiewet',
     date: '2024',
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
-        Opened a new branch office to better serve clients in a different
-        region. This expansion is a key step towards extending our services to
-        more communities.
+        Advisering en procedures met betrekking tot het recht op bijstand en de
+        verplichtingen van gemeenten en burgers.
       </p>
     ),
   },
   {
-    title: 'Client Satisfaction Program',
+    title: 'Omgevingswet',
     date: '2024',
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
-        Launched our client satisfaction program to gather feedback and ensure
-        we are consistently exceeding client expectations.
+        Juridisch advies over vergunningen, het omgevingsplan, en de
+        implementatie van deze integrale wetgeving.
       </p>
     ),
   },
   {
-    title: 'First Major Case Win',
+    title: 'Jeugdwet',
     date: '2024',
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
-        Achieved a significant victory in our first major case. This milestone
-        solidified our reputation as a trusted firm with skilled litigators.
+        Ondersteuning bij zaken rondom jeugdzorg, jeugdbescherming en
+        jeugdhulpverlening.
       </p>
     ),
   },
   {
-    title: 'Expansion of Practice Areas',
+    title: 'WMO 2015',
     date: '2023',
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
-        Expanded into additional practice areas, including family law, corporate
-        law, and intellectual property. This allowed us to serve a broader range
-        of client needs.
+        Advies over de Wet maatschappelijke ondersteuning en de rechten van
+        burgers op zorg en ondersteuning.
       </p>
     ),
   },
   {
-    title: 'First Client Onboarded',
+    title: 'Handhavingsrecht',
     date: '2023',
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
-        Successfully onboarded the first client. This milestone marked the
-        beginning of providing expert legal counsel and representation to our
-        clients.
+        Begeleiding bij handhavingsmaatregelen van bestuursorganen, zowel in
+        administratief als in juridisch opzicht.
       </p>
     ),
   },
   {
-    title: 'Firm Establishment',
+    title: 'Gemeentewet',
     date: '2023',
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
-        The legal firm was officially established. Initial efforts focused on
-        setting up office operations, building a team, and defining core legal
-        practice areas.
+        Vraagstukken rond gemeentelijke organisatie, verordeningen en
+        besluitvorming.
+      </p>
+    ),
+  },
+  {
+    title: 'Wet open overheid (Woo)',
+    date: '2023',
+    content: (
+      <p className='text-neutral-700 dark:text-neutral-300'>
+        Begeleiding bij verzoeken om overheidsinformatie en de transparantie van
+        publieke instellingen.
       </p>
     ),
   },
@@ -87,7 +93,7 @@ export default function AboutInfo() {
                 viewport={{ once: true }}
                 className='text-bodyDefault font-normal tracking-wide shrink-0'
               >
-                About
+                Over Ons – Salah Legal Esq.
               </motion.h2>
               {/* Container for Image, middle of the div */}
             </div>
@@ -98,16 +104,55 @@ export default function AboutInfo() {
                   initial='initial'
                   whileInView='animate'
                   viewport={{ once: true }}
-                  className='text-h3 font-normal xl:text-h2'
+                  className='text-h3 font-normal xl:text-h2 hyphens-auto'
                 >
-                  At Salah Legal ESQ. We pride ourselves on being a leading
-                  consulting law firm dedicated to providing comprehensive legal
-                  solutions tailored to meet the diverse needs of our clients.
+                  Onze missie is eenvoudig: het bieden van betrouwbare,
+                  strategische en praktische juridische oplossingen voor
+                  bestuursrechtelijke vraagstukken. We begrijpen dat
+                  bestuursrecht vaak complexe, ingrijpende en vaak tijdkritische
+                  vraagstukken met zich meebrengt.
                 </motion.h3>
+                <motion.p
+                  variants={fadeInAnimationVariantsBottom}
+                  initial='initial'
+                  whileInView='animate'
+                  viewport={{ once: true }}
+                  className='text-dark70 text-bodyMedium sm:text-bodyDefault'
+                >
+                  Daarom streven wij naar een efficiënte en effectieve
+                  benadering van elk dossier. Wij helpen onze cliënten niet
+                  alleen de juridische obstakels te overwinnen, maar zorgen er
+                  ook voor dat ze proactief kunnen inspelen op veranderende wet-
+                  en regelgeving.
+                </motion.p>
               </div>
             </div>
           </div>
-          <Timeline data={timelineData} />
+          <div className='flex flex-col gap-12'>
+            <h3 className='text-h3 font-normal z-20'>
+              richten we ons op een breed scala aan bestuursrechtelijke
+              onderwerpen. We hebben uitgebreide ervaring met onder andere
+            </h3>
+            <Timeline data={timelineData} />
+          </div>
+          <div>
+            <p>
+              Wat ons onderscheidt, is onze pragmatische en resultaatgerichte
+              aanpak. Bij Salah Legal Esq. combineren wij diepgaande juridische
+              kennis met een heldere focus op de praktische uitkomsten. We
+              begrijpen dat elke zaak uniek is, en dus stemmen wij onze
+              strategie altijd af op de specifieke situatie van onze cliënten.
+              Of het nu gaat om het adviseren over beleidsontwikkeling, het
+              procederen in bezwaar- of beroepszaken, of het begeleiden van
+              handhavingsmaatregelen, wij bieden oplossingen die verder gaan dan
+              alleen juridische antwoorden. Onze focus ligt niet alleen op het
+              leveren van juridische bijstand, maar ook op het bieden van
+              strategisch advies waarmee u beter kunt navigeren door de complexe
+              bestuursrechtelijke omgeving. Wij zijn er om te zorgen dat onze
+              cliënten niet alleen in lijn blijven met de wetgeving, maar dat
+              zij ook hun doelstellingen op een efficiënte manier realiseren.
+            </p>
+          </div>
           <ReachOut />
         </aside>
       </section>

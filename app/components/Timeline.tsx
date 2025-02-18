@@ -15,15 +15,19 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
+    function updateHeight() {
+      if (ref.current) {
+        setHeight(ref.current.offsetHeight);
+      }
     }
-  }, [ref]);
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, [ref, data]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start 20%', 'end 50%'],
+    offset: ['start 25%', 'end 50%'],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -35,14 +39,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       initial='initial'
       whileInView='animate'
       viewport={{ once: true }}
-      className='w-full  bg-white dark:bg-neutral-950 font-sans -mt-10'
+      className='w-full bg-white dark:bg-neutral-950 font-sans -mt-10'
       ref={containerRef}
     >
-      <div ref={ref} className='relative pb-20 '>
+      <div ref={ref} className='relative py-20 '>
         {data.map((item, index) => (
           <div
             key={index}
-            className='flex justify-start pt-16 md:pt-32 md:gap-10 ' //
+            className='flex justify-start py-12 md:gap-10 ' //
           >
             <div className='sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full'>
               <div className='h-10 absolute rounded-full bg-white dark:bg-black flex items-center justify-center'>

@@ -20,7 +20,7 @@ export default function Services() {
                 viewport={{ once: true }}
                 className='text-bodyDefault font-normal tracking-wide shrink-0'
               >
-                Salah Legal ESQ. — Our Expertise.
+                Salah Legal ESQ. — Onze expertise.
               </motion.h2>
               {/* Container for Image, middle of the div */}
             </div>

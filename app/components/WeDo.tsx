@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Corrected import statement
 import { fadeInAnimationVariantsBottom } from '@/lib/framerMotion';
-
 const services = [
   {
     id: '01',
