@@ -9,7 +9,6 @@ import { Timeline } from './Timeline';
 const timelineData = [
   {
     title: 'Participatiewet',
-    date: '2024',
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
         Advisering en procedures met betrekking tot het recht op bijstand en de
@@ -19,7 +18,7 @@ const timelineData = [
   },
   {
     title: 'Omgevingswet',
-    date: '2024',
+
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
         Juridisch advies over vergunningen, het omgevingsplan, en de
@@ -29,7 +28,7 @@ const timelineData = [
   },
   {
     title: 'Jeugdwet',
-    date: '2024',
+
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
         Ondersteuning bij zaken rondom jeugdzorg, jeugdbescherming en
@@ -39,7 +38,7 @@ const timelineData = [
   },
   {
     title: 'WMO 2015',
-    date: '2023',
+
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
         Advies over de Wet maatschappelijke ondersteuning en de rechten van
@@ -49,7 +48,7 @@ const timelineData = [
   },
   {
     title: 'Handhavingsrecht',
-    date: '2023',
+
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
         Begeleiding bij handhavingsmaatregelen van bestuursorganen, zowel in
@@ -59,7 +58,7 @@ const timelineData = [
   },
   {
     title: 'Gemeentewet',
-    date: '2023',
+
     content: (
       <p className='text-neutral-700 dark:text-neutral-300'>
         Vraagstukken rond gemeentelijke organisatie, verordeningen en

@@ -32,7 +32,7 @@ type NavLink = {
 
 const links: NavLink[] = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
+  { label: 'Over ons', path: '/Over-ons' },
   { label: 'Contact', path: '/contact' },
   { label: 'Blog', path: '/blog' },
 ];

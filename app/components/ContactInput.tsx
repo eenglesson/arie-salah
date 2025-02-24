@@ -2,7 +2,6 @@
 
 import { fadeInAnimationVariantsBottom } from '@/lib/framerMotion';
 import React from 'react';
-import RecurringClients from './RecurringClients';
 
 import { motion } from 'framer-motion';
 import ContactForm from './ContactForm';
@@ -31,7 +30,7 @@ export default function ContactInput() {
                   initial='initial'
                   whileInView='animate'
                   viewport={{ once: true }}
-                  className='text-h4 text-dark70 font-normal tracking-wide'
+                  className='text-h4font-normal tracking-wide'
                 >
                   Contact Information
                 </motion.h4>
@@ -42,11 +41,11 @@ export default function ContactInput() {
                     whileInView='animate'
                     viewport={{ once: true }}
                     className='hover:underline group flex items-center gap-2'
-                    href='mailto:SalahLegal@outlook.com'
+                    href='mailto:salahlegal@outlook.com'
                   >
                     <Mail size={16} />
                     <span className='text-dark70 text-bodyMedium sm:text-bodyDefault hover:text-black'>
-                      SalahLegal@outlook.com
+                      salahlegal@outlook.com
                     </span>
                   </motion.a>
                   <motion.a
@@ -55,12 +54,31 @@ export default function ContactInput() {
                     whileInView='animate'
                     viewport={{ once: true }}
                     className='hover:underline group flex items-center gap-2'
+                    href='tel:+31648162676'
                   >
                     <Phone size={16} />
                     <span className='text-dark70 text-bodyMedium sm:text-bodyDefault hover:text-black'>
-                      +49 759 283 273
+                      06-48162676
                     </span>
                   </motion.a>
+                  <motion.div
+                    variants={fadeInAnimationVariantsBottom}
+                    initial='initial'
+                    whileInView='animate'
+                    viewport={{ once: true }}
+                    className='flex flex-col gap-1 mt-4'
+                  >
+                    <span className='text-dark70 text-bodyMedium sm:text-bodyDefault'>
+                      KvK-nummer: 92043070
+                    </span>
+                    <span className='text-dark70 text-bodyMedium sm:text-bodyDefault'>
+                      BTW-nummer: NL004936556B76
+                    </span>
+                    <span className='text-dark70 text-bodyMedium sm:text-bodyDefault'>
+                      Postadres: postbus 7344, <br />
+                      2701 AH Zoetermeer
+                    </span>
+                  </motion.div>
                 </div>
               </aside>
               {/* Container for Image, middle of the div */}
@@ -74,14 +92,17 @@ export default function ContactInput() {
                   viewport={{ once: true }}
                   className='text-h3 font-normal xl:text-h2'
                 >
-                  Reach out to us if you have any questions or specific requests
+                  Bij Salah Legal Esq. staan we altijd klaar om u te
+                  ondersteunen bij bestuursrechtelijke vraagstukken. Of u nu
+                  advies nodig heeft, hulp zoekt bij het indienen van een
+                  bezwaar, of juridische bijstand zoekt in een complexe
+                  rechtszaak, wij bieden de expertise die u nodig heeft.
                 </motion.h3>
               </div>
 
               <ContactForm />
             </div>
           </div>
-          <RecurringClients />
         </aside>
       </section>
     </>

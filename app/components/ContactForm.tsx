@@ -1,6 +1,9 @@
 'use client';
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
+import { Mail, Phone } from 'lucide-react';
+import { fadeInAnimationVariantsBottom } from '@/lib/framerMotion';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -98,6 +101,63 @@ export default function ContactForm() {
         >
           {isSending ? 'Sending...' : 'Send Email'}
         </button>
+        <aside className='xl:hidden mt-8 flex flex-col gap-4'>
+          <motion.h4
+            variants={fadeInAnimationVariantsBottom}
+            initial='initial'
+            whileInView='animate'
+            viewport={{ once: true }}
+            className='text-h4 font-normal tracking-wide'
+          >
+            Contact Information
+          </motion.h4>
+          <div className='xl:hidden flex flex-col gap-2'>
+            <motion.a
+              variants={fadeInAnimationVariantsBottom}
+              initial='initial'
+              whileInView='animate'
+              viewport={{ once: true }}
+              className='hover:underline group flex items-center gap-2'
+              href='mailto:salahlegal@outlook.com'
+            >
+              <Mail size={16} />
+              <span className='text-dark70 text-bodyMedium sm:text-bodyDefault hover:text-black'>
+                salahlegal@outlook.com
+              </span>
+            </motion.a>
+            <motion.a
+              variants={fadeInAnimationVariantsBottom}
+              initial='initial'
+              whileInView='animate'
+              viewport={{ once: true }}
+              className='hover:underline group flex items-center gap-2'
+              href='tel:+31648162676'
+            >
+              <Phone size={16} />
+              <span className='text-dark70 text-bodyMedium sm:text-bodyDefault hover:text-black'>
+                06-48162676
+              </span>
+            </motion.a>
+            <motion.div
+              variants={fadeInAnimationVariantsBottom}
+              initial='initial'
+              whileInView='animate'
+              viewport={{ once: true }}
+              className='flex flex-col gap-1 mt-4'
+            >
+              <span className='text-dark70 text-bodyMedium sm:text-bodyDefault'>
+                KvK-nummer: 92043070
+              </span>
+              <span className='text-dark70 text-bodyMedium sm:text-bodyDefault'>
+                BTW-nummer: NL004936556B76
+              </span>
+              <span className='text-dark70 text-bodyMedium sm:text-bodyDefault'>
+                Postadres: postbus 7344, <br />
+                2701 AH Zoetermeer
+              </span>
+            </motion.div>
+          </div>
+        </aside>
       </form>
     </>
   );

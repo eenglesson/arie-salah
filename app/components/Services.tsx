@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import ServicesMenu from './ServicesMenu';
-import RecurringClients from './RecurringClients';
+
 import { fadeInAnimationVariantsBottom } from '@/lib/framerMotion';
 
 export default function Services() {
@@ -52,7 +52,6 @@ export default function Services() {
               <ServicesMenu />
             </div>
           </div>
-          <RecurringClients />
         </aside>
       </section>
     </>

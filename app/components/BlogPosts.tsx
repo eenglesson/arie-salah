@@ -45,8 +45,9 @@ export default function BlogPosts({
                   viewport={{ once: true }}
                   className='text-h3 font-normal xl:text-h2'
                 >
-                  Where we keep you informed about the latest legal
-                  developments, firm announcements, and industry insights.
+                  Waar we u op de hoogte houden van de nieuwste juridische
+                  ontwikkelingen, aankondigingen van ons kantoor en
+                  branche-inzichten.
                 </motion.h3>
                 {showButton && (
                   <motion.div
@@ -56,7 +57,7 @@ export default function BlogPosts({
                     viewport={{ once: true }}
                   >
                     <Button to='/blog' linkBlack arrow>
-                      Read Latest Stories
+                      Lees de laatste verhalen
                     </Button>
                   </motion.div>
                 )}

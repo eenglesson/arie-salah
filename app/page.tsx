@@ -1,7 +1,7 @@
 // pages/home.tsx
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
-import BackgroundSection from './components/BackgroundSection';
+
 import Services from './components/Services';
 import WeDo from './components/WeDo';
 
@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import BlogPosts from './components/BlogPosts';
 import { simpleBlogCard } from './lib/types';
 import { client } from './lib/sanity';
+import Image from 'next/image';
 
 export const revalidate = 30; // ISR revalidate every 30 seconds
 
@@ -35,17 +36,29 @@ export default async function Home() {
       <div className='px-4 sm:px-16 w-full bg-secondaryBlack'>
         <Navbar />
       </div>
-      <BackgroundSection
-        backgroundImage='/assets/pillars.jpg'
-        className='min-h-screen sm:px-16'
-      >
-        <div className='relative flex-1'>
-          {/* Positioning the Hero at the bottom */}
-          <div className='absolute px-4 bottom-0 w-full'>
-            <Hero />
+      <section className='h-screen relative bg-white'>
+        {/* Container for the image: centered both horizontally and vertically */}
+        <div
+          className='flex justify-center items-center'
+          style={{ height: '50vh' }}
+        >
+          <div className='mx-auto' style={{ height: '100%', width: 'auto' }}>
+            <Image
+              src='/assets/LogoSalahLegalEsq.png'
+              alt='img'
+              width={1000}
+              height={1000}
+              priority={true}
+              className='object-contain'
+              style={{ height: '100%', width: 'auto' }}
+            />
           </div>
         </div>
-      </BackgroundSection>
+        {/* Positioning the Hero at the bottom */}
+        <div className='absolute bottom-0 w-full'>
+          <Hero />
+        </div>
+      </section>
 
       {/* Additional content */}
       <section className='max-w-[1600px] flex flex-col mx-auto px-4 gap-24 sm:gap-32 sm:px-16 pb-10'>

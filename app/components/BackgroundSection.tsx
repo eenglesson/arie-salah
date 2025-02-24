@@ -11,18 +11,18 @@ interface BackgroundSectionProps {
 export default function BackgroundSection({
   children,
   backgroundImage,
-  overlayOpacity = 'bg-opacity-50',
+  overlayOpacity = '',
   className = '',
 }: BackgroundSectionProps) {
   return (
     <section
-      className={`relative w-full bg-cover bg-center-top md:bg-center bg-no-repeat ${className}`}
+      className={`relative max-w-5xl h-1/2 bg-cover bg-center-top md:bg-center bg-no-repeat ${className}`}
       style={{
         backgroundImage: `url("${backgroundImage}")`,
       }}
     >
       {/* Overlay for darkening the background */}
-      <div className={`absolute inset-0 bg-black ${overlayOpacity}`}></div>
+      <div className={`absolute inset-0 ${overlayOpacity}`}></div>
 
       {/* Content */}
       <div className='relative z-10 flex flex-col justify-between min-h-screen'>
