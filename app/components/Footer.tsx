@@ -6,6 +6,7 @@ import { fadeInAnimationVariantsBottom } from '@/lib/framerMotion';
 
 import { Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Link = {
   name: string;
@@ -18,6 +19,7 @@ export default function Footer() {
     { name: 'Over ons', path: '/Over-ons' },
     { name: 'Contact', path: '/contact' },
     { name: 'Blog', path: '/blog' },
+    { name: 'Privacy', path: '/privacy' },
   ];
 
   const socialLinks: Link[] = [
@@ -69,7 +71,7 @@ export default function Footer() {
                 initial='initial'
                 whileInView='animate'
                 viewport={{ once: true }}
-                className='hover:underline group flex items-center gap-2'
+                className='underline-animation group w-fit flex items-center gap-2'
                 href='mailto:SalahLegal@outlook.com'
               >
                 <Mail size={16} />
@@ -82,7 +84,7 @@ export default function Footer() {
                 initial='initial'
                 whileInView='animate'
                 viewport={{ once: true }}
-                className='hover:underline group flex items-center gap-2'
+                className='w-fit group flex items-center gap-2'
               >
                 <Phone size={16} />
                 <span className='text-dark70 text-bodyMedium sm:text-bodyDefault hover:text-black'>
@@ -106,7 +108,7 @@ export default function Footer() {
                 {companyLinks.map((link, index) => (
                   <motion.li
                     key={index}
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{
                       duration: 0.4,
@@ -140,7 +142,7 @@ export default function Footer() {
                 {socialLinks.map((link, index) => (
                   <motion.li
                     key={index}
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{
                       duration: 0.4,
@@ -184,9 +186,24 @@ export default function Footer() {
             </div>
           </section>
         </section>
-        <p className='mt-4 font-medium '>
-          © 2023 Salah Legal Esq. All rights reserved.
-        </p>
+        <motion.div
+          variants={fadeInAnimationVariantsBottom}
+          initial='initial'
+          whileInView='animate'
+          viewport={{ once: true }}
+          className='flex flex-col sm:flex-row justify-between items-center gap-2'
+        >
+          <p className='mt-2 font-normal text-dark70 text-sm sm:font-medium'>
+            © {new Date().getFullYear()} Salah Legal Esq. All rights reserved.
+          </p>
+
+          <Link
+            href='https://www.eenglesson.com'
+            className='font-normal underline-animation text-dark70 hover:text-black text-sm'
+          >
+            Crafted with passion by E | Englesson
+          </Link>
+        </motion.div>
       </footer>
     </>
   );
