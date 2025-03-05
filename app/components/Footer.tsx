@@ -191,15 +191,15 @@ export default function Footer() {
           initial='initial'
           whileInView='animate'
           viewport={{ once: true }}
-          className='flex flex-col sm:flex-row justify-between items-center gap-2'
+          className='flex flex-col md:flex-row justify-between items-center gap-2 mt-2'
         >
-          <p className='mt-2 font-normal text-dark70 text-sm sm:font-medium'>
+          <p className=' font-normal text-dark70 text-sm sm:font-medium'>
             © {new Date().getFullYear()} Salah Legal Esq. All rights reserved.
           </p>
 
           <Link
             href='https://www.eenglesson.com'
-            className='font-normal underline-animation text-dark70 hover:text-black text-sm'
+            className='font-normal underline-animation text-dark70 hover:text-black text-sm '
           >
             Crafted with passion by E | Englesson
           </Link>

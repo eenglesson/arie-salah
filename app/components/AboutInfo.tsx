@@ -196,27 +196,29 @@ export default function AboutInfo() {
             </h3>
             <ul className='list-disc pl-5 text-dark70 text-bodyMedium sm:text-bodyDefault space-y-2'>
               <li>
-                <span className='font-semibold'>Expertise:</span> Wij zijn
-                gespecialiseerd in bestuursrecht, met diepgaande kennis van
+                <span className='font-semibold text-black'>Expertise:</span> Wij
+                zijn gespecialiseerd in bestuursrecht, met diepgaande kennis van
                 onder andere de Participatiewet, Omgevingswet, Jeugdwet, WMO
                 2015, en andere aanverwante wet- en regelgeving.
               </li>
               <li>
-                <span className='font-semibold'>Persoonlijke benadering:</span>{' '}
+                <span className='font-semibold text-black'>
+                  Persoonlijke benadering:
+                </span>{' '}
                 Wij luisteren naar uw specifieke behoeften en ontwikkelen op
                 maat gemaakte oplossingen.
               </li>
               <li>
-                <span className='font-semibold'>
+                <span className='font-semibold text-black'>
                   Pragmatisch en resultaatgericht:
                 </span>{' '}
                 Wij streven niet alleen naar juridische correctheid, maar ook
                 naar de beste uitkomst voor onze cliënten.
               </li>
               <li>
-                <span className='font-semibold'>Betrouwbaar:</span> Wij zetten
-                ons in voor de belangen van onze cliënten en staan bekend om
-                onze integriteit en transparantie.
+                <span className='font-semibold text-black'>Betrouwbaar:</span>{' '}
+                Wij zetten ons in voor de belangen van onze cliënten en staan
+                bekend om onze integriteit en transparantie.
               </li>
             </ul>
           </motion.div>
