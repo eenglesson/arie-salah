@@ -61,9 +61,10 @@ export default function Footer() {
               viewport={{ once: true }}
               className='shrink-0 text-bodyMedium sm:text-bodyDefault max-w-[600px]'
             >
-              We pride ourselves on being a leading consulting law firm
-              dedicated to providing comprehensive legal solutions tailored to
-              meet the diverse needs of our clients.
+              Salah Legal Esq. biedt strategisch en praktisch juridisch advies
+              in bestuursrecht. Met een persoonlijke en resultaatgerichte aanpak
+              leveren wij heldere, op maat gemaakte oplossingen, zodat u zich
+              kunt concentreren op wat echt belangrijk is.
             </motion.p>
             <div className='flex flex-col gap-2'>
               <motion.a
