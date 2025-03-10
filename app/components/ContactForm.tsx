@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { Mail, Phone } from 'lucide-react';
 import { fadeInAnimationVariantsBottom } from '@/lib/framerMotion';
+import { toast } from 'sonner';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ export default function ContactForm() {
     e.preventDefault();
 
     if (!formData.email || !formData.name || !formData.message) {
-      alert('Please fill in all fields before sending.');
+      toast.error('Vul alle velden in voor verzending.');
       return;
     }
 
@@ -35,7 +36,7 @@ export default function ContactForm() {
         'service_hjyxwlb', // Replace with your EmailJS service ID
         'template_u5oczb6', // Replace with your EmailJS template ID
         {
-          to_name: 'Salah Legal ESQ.', // Replace with the recipient's name
+          to_name: 'Salah Legal ESQ.', // Recipient's name
           from_name: formData.name, // Sender's name
           from_email: formData.email, // Sender's email
           message: formData.message, // Message content
@@ -45,10 +46,12 @@ export default function ContactForm() {
       .then((result) => {
         console.log('Email sent:', result.text);
         setFormData({ email: '', name: '', message: '' }); // Reset form fields
+        toast.success('Email succesvol verzonden!');
         setIsSending(false);
       })
       .catch((error) => {
         console.error('Error sending email:', error.text);
+        toast.error('Er is een fout opgetreden, probeer het opnieuw.');
         setIsSending(false);
       });
   };
@@ -64,7 +67,7 @@ export default function ContactForm() {
               name='email'
               value={formData.email}
               onChange={handleChange}
-              placeholder='Your Email'
+              placeholder='Uw e-mailadres'
               className='w-full border placeholder:text-bodyMedium font-normal placeholder:font-light placeholder:text-dark50 sm:placeholder:text-bodyDefault rounded-lg px-3 py-2 text-bodyMedium sm:text-bodyDefault focus:outline-none focus:border-gold border-transparent bg-grey05'
               required
             />
@@ -76,7 +79,7 @@ export default function ContactForm() {
               name='name'
               value={formData.name}
               onChange={handleChange}
-              placeholder='Your Name'
+              placeholder='Uw naam'
               className='w-full border placeholder:text-bodyMedium font-normal placeholder:font-light  placeholder:text-dark50 sm:placeholder:text-bodyDefault rounded-lg px-3 py-2 text-bodyMedium sm:text-bodyDefault focus:outline-none focus:border-gold border-transparent bg-grey05'
               required
             />
@@ -89,7 +92,7 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             rows={6}
-            placeholder='Your Message'
+            placeholder='Uw bericht'
             className='w-full border placeholder:text-bodyMedium font-normal placeholder:font-light placeholder:text-dark50 sm:placeholder:text-bodyDefault rounded-lg px-3 py-2 text-bodyMedium sm:text-bodyDefault focus:outline-none focus:border-gold border-transparent bg-grey05'
             required
           />
@@ -99,7 +102,7 @@ export default function ContactForm() {
           className='w-full bg-gold text-white rounded-lg px-4 py-3 disabled:opacity-50'
           disabled={isSending}
         >
-          {isSending ? 'Sending...' : 'Send Email'}
+          {isSending ? 'Bezig met verzenden...' : 'Verstuur bericht'}
         </button>
         <aside className='xl:hidden mt-8 flex flex-col gap-4'>
           <motion.h4
@@ -109,7 +112,7 @@ export default function ContactForm() {
             viewport={{ once: true }}
             className='text-h4 font-normal tracking-wide'
           >
-            Contact Information
+            Contactinformatie
           </motion.h4>
           <div className='xl:hidden flex flex-col gap-2'>
             <motion.a

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
   title: 'Salah Legal Esq.',
@@ -18,7 +19,10 @@ export default function RootLayout({
       <head>
         <link rel='icon' href='/legal1.png' type='image/png' />
       </head>
-      <body className='mx-auto'>{children}</body>
+      <body className='mx-auto'>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }

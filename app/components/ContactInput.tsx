@@ -32,7 +32,7 @@ export default function ContactInput() {
                   viewport={{ once: true }}
                   className='text-h4font-normal tracking-wide'
                 >
-                  Contact Information
+                  Contactinformatie
                 </motion.h4>
                 <div className='hidden xl:flex flex-col gap-2'>
                   <motion.a
