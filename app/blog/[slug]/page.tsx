@@ -1,5 +1,5 @@
 import Footer from '@/app/components/Footer';
-import Navbar from '@/app/components/Navbar';
+import Navbar1 from '@/app/components/Navbar1';
 import ReachOut from '@/app/components/ReachOut';
 import { client, urlFor } from '@/app/lib/sanity';
 import { fullBlog } from '@/app/lib/types';
@@ -31,10 +31,8 @@ export default async function page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <nav className='px-4 sm:px-16  bg-secondaryBlack'>
-        <Navbar />
-      </nav>
-      <section className='max-w-[1600px] flex flex-col mx-auto px-4 gap-24 sm:gap-32 sm:px-16 pb-10'>
+      <Navbar1 />
+      <section className='max-w-[1600px] flex flex-col pt-24 mx-auto px-4 gap-24 sm:gap-32 sm:px-16 pb-10'>
         <section className='pt-[32px] xl:pt-[64px]'>
           <aside className='w-full flex flex-col gap-24'>
             <div className='flex flex-col xl:flex-row xl:justify-between gap-4'>

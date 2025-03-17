@@ -58,8 +58,8 @@ export default function ContactForm() {
 
   return (
     <>
-      <form onSubmit={sendEmail} className='w-full flex flex-col gap-3 '>
-        <aside className='flex flex-col sm:flex-row gap-3 w-full'>
+      <form onSubmit={sendEmail} className='w-full flex flex-col gap-4 '>
+        <aside className='flex flex-col sm:flex-row gap-4 w-full'>
           <div className='flex-1'>
             <input
               type='email'
@@ -85,7 +85,7 @@ export default function ContactForm() {
             />
           </div>
         </aside>
-        <div>
+        <div className='flex gap-2 flex-col'>
           <textarea
             id='message'
             name='message'

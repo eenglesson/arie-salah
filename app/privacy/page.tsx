@@ -1,13 +1,12 @@
 import Footer from '../components/Footer';
-import NavBar from '../components/Navbar';
+import Navbar1 from '../components/Navbar1';
 
 export default function Page() {
   return (
     <>
-      <div className='px-4 sm:px-16 bg-secondaryBlack'>
-        <NavBar />
-      </div>
-      <section className='px-4 sm:px-16 py-8 bg-white text-dark'>
+      <Navbar1 />
+
+      <section className='px-4 sm:px-16 py-8 pt-24  bg-white text-dark'>
         <div className='max-w-4xl lg:mx-auto mb-16'>
           <h1 className='text-3xl font-bold mb-4'>Salah Legal Esq.</h1>
           <h2 className='text-xl font-semibold mb-2'>

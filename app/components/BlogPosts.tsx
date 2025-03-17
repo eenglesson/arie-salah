@@ -95,7 +95,11 @@ export default function BlogPosts({
                       <div className='border-b pb-5 sm:pb-8 border-grey30'>
                         <div className='overflow-hidden rounded-2xl w-full'>
                           <Image
-                            src={urlFor(post.titleImage).url()}
+                            src={
+                              post.titleImage
+                                ? urlFor(post.titleImage).url()
+                                : '/assets/legal1.png'
+                            }
                             alt={post.title}
                             width={800}
                             height={800}

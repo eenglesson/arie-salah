@@ -100,3 +100,84 @@ body {
 .underline-animation:hover::after {
   transform: scaleX(1);
 }
+
+@layer utilities {
+  /* Keyframes definitions */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes line1Open {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    30% {
+      transform: translateY(4px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(4px) rotate(-45deg);
+    }
+  }
+
+  @keyframes line2Open {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    30% {
+      transform: translateY(-4px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-4px) rotate(45deg);
+    }
+  }
+
+  @keyframes line1Close {
+    0% {
+      transform: translateY(4px) rotate(-45deg);
+    }
+    40% {
+      transform: translateY(4px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+
+  @keyframes line2Close {
+    0% {
+      transform: translateY(-4px) rotate(45deg);
+    }
+    40% {
+      transform: translateY(-4px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+
+  /* Custom animation utility classes */
+  .animate-scroll {
+    animation: scroll 10s linear infinite;
+  }
+
+  .animate-line1-open {
+    animation: line1Open 0.3s ease forwards;
+  }
+
+  .animate-line2-open {
+    animation: line2Open 0.3s ease forwards;
+  }
+
+  .animate-line1-close {
+    animation: line1Close 0.3s ease forwards;
+  }
+
+  .animate-line2-close {
+    animation: line2Close 0.3s ease forwards;
+  }
+}
