@@ -34,7 +34,7 @@ export default function ContactForm() {
     emailjs
       .send(
         'service_hs9isbo', // Replace with your EmailJS service ID
-        'template_2heicbp', // Replace with your EmailJS template ID
+        'template_yf4pcbs', // Replace with your EmailJS template ID
         {
           to_name: 'Salah Legal ESQ.', // Recipient's name
           from_name: formData.name, // Sender's name
