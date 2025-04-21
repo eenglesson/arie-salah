@@ -33,15 +33,15 @@ export default function ContactForm() {
 
     emailjs
       .send(
-        'service_hjyxwlb', // Replace with your EmailJS service ID
-        'template_u5oczb6', // Replace with your EmailJS template ID
+        'service_hs9isbo', // Replace with your EmailJS service ID
+        'template_2heicbp', // Replace with your EmailJS template ID
         {
           to_name: 'Salah Legal ESQ.', // Recipient's name
           from_name: formData.name, // Sender's name
           from_email: formData.email, // Sender's email
           message: formData.message, // Message content
         },
-        'YYgu_Yw10U1fBvjKv' // Replace with your EmailJS public key
+        'c4mJwCYK_f0V9VuS_' // Replace with your EmailJS public key
       )
       .then((result) => {
         console.log('Email sent:', result.text);
